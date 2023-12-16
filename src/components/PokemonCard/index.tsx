@@ -1,13 +1,16 @@
 type Props = {
+  id: number;
   name: string;
   image: string;
 };
 
-export function PokemonCard({ name, image }: Props) {
+export function PokemonCard({ id, name, image }: Props) {
   return (
     <div>
       <img src={image} />
-      <h3>{name}</h3>
+      <h3>
+        #{id} {name[0].toUpperCase() + name.substring(1)}
+      </h3>
     </div>
   );
 }

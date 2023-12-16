@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 import { PokemonCard } from "../../components/PokemonCard";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { SubmitHandler, useForm } from "react-hook-form";
 
-export type Pokemon = {
+type Inputs = {
+  inputSearch: string;
+};
+
+type Pokemon = {
   id: number;
   name: string;
   sprites: {
@@ -18,6 +23,15 @@ export function App() {
   const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
   const [offset, setOffset] = useState(0);
   const [limit, setLimit] = useState(5);
+
+  const navigate = useNavigate();
+
+  const { register, handleSubmit } = useForm<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(data);
+    navigate("/details/150");
+  };
 
   function addLimit() {
     setLimit((prevLimit) => prevLimit + 5);
@@ -64,10 +78,23 @@ export function App() {
       <button onClick={prevPage}>Página anterior</button>
       <button onClick={nextPage}>Próxima página</button>
 
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <label htmlFor="inputSearch" className="srOnly">
+          Pesquisar Pokémon
+        </label>
+        <input
+          type="text"
+          id="inputSearch"
+          placeholder="Pesquisar Pokémon"
+          {...register("inputSearch")}
+        />
+      </form>
+
       {pokemonList.map((pokemon) => {
         return (
           <Link to={`/details/${pokemon.id}`} key={pokemon.id}>
             <PokemonCard
+              id={pokemon.id}
               name={pokemon.name}
               image={pokemon.sprites.other.home.front_default}
             />
