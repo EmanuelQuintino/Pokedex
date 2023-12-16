@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { PokemonCard } from "../../components/PokemonCard";
+import { Link } from "react-router-dom";
 
 export type Pokemon = {
   id: number;
@@ -65,12 +66,12 @@ export function App() {
 
       {pokemonList.map((pokemon) => {
         return (
-          <a href={`/pokemon/${pokemon.id}`} key={pokemon.id}>
+          <Link to={`/details/${pokemon.id}`} key={pokemon.id}>
             <PokemonCard
               name={pokemon.name}
               image={pokemon.sprites.other.home.front_default}
             />
-          </a>
+          </Link>
         );
       })}
     </div>
