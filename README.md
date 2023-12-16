@@ -1,4 +1,4 @@
-# Pokedex
+# Pokédex
 
 - API: https://pokeapi.co/api/v2/pokemon
 - Details: https://pokeapi.co/api/v2/pokemon/:id
