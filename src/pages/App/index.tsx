@@ -15,12 +15,19 @@ export type Pokemon = {
 
 export function App() {
   const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
-  const [offset, setOffset] = useState(1);
+  const [offset, setOffset] = useState(0);
   const [limit, setLimit] = useState(5);
 
-  function add() {
-    setLimit(5);
-    setOffset(5);
+  function addLimit() {
+    setLimit((prevLimit) => prevLimit + 5);
+  }
+
+  function nextPage() {
+    setOffset((prevOffset) => prevOffset + limit);
+  }
+
+  function prevPage() {
+    setOffset((prevOffset) => Math.max(prevOffset - limit, 0));
   }
 
   useEffect(() => {
@@ -52,15 +59,18 @@ export function App() {
     <div>
       <h1>App</h1>
 
-      <button onClick={add}>Add</button>
+      <button onClick={addLimit}>Incrementar limite</button>
+      <button onClick={prevPage}>Página anterior</button>
+      <button onClick={nextPage}>Próxima página</button>
 
       {pokemonList.map((pokemon) => {
         return (
-          <PokemonCard
-            key={pokemon.id}
-            name={pokemon.name}
-            image={pokemon.sprites.other.home.front_default}
-          />
+          <a href={`/pokemon/${pokemon.id}`} key={pokemon.id}>
+            <PokemonCard
+              name={pokemon.name}
+              image={pokemon.sprites.other.home.front_default}
+            />
+          </a>
         );
       })}
     </div>
