@@ -39,7 +39,12 @@ export function App() {
 
   const navigate = useNavigate();
 
-  const { register, handleSubmit, reset } = useForm<Inputs>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
@@ -60,15 +65,15 @@ export function App() {
   }
 
   console.log(data);
-  console.error(error);
+  if (error) console.error(error);
 
   return (
     <div>
       <h1>App</h1>
       <img src="logo-pokemon.png" alt="logo-pokemon" width={240} />
 
-      <button onClick={prevPage}>Página anterior</button>
-      <button onClick={nextPage}>Próxima página</button>
+      <button onClick={prevPage}>&lt; Anterior</button>
+      <button onClick={nextPage}>Próxima &gt;</button>
       <button onClick={() => refetch()}>Refect</button>
 
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -79,8 +84,11 @@ export function App() {
           type="text"
           id="inputSearch"
           placeholder="Pesquisar Pokémon"
-          {...register("inputSearch")}
+          {...register("inputSearch", {
+            required: "Preencha id, nome ou tipo do pokémon",
+          })}
         />
+        <span>{errors.inputSearch?.message}</span>
       </form>
 
       {isLoading && <span>Loading...</span>}

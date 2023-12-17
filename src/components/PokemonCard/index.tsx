@@ -15,19 +15,6 @@ export function PokemonCard({ pokemon }: Props) {
         #{pokemon.id} {pokemon.name[0].toUpperCase() + pokemon.name.substring(1)}
       </strong>
 
-      <div>Height: {pokemon.height}0cm</div>
-      <div>Weight: {pokemon.weight}kg</div>
-
-      {pokemon.stats?.map((status) => {
-        return (
-          <div key={status.stat.name}>
-            <span>{status.stat.name}</span>
-            <progress max={300} value={status.base_stat} />
-            <span>{status.base_stat}</span>
-          </div>
-        );
-      })}
-
       {pokemon.types.map((type) => {
         return <div key={type.type.name}>{type.type.name}</div>;
       })}
