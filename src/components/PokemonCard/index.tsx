@@ -1,16 +1,14 @@
-type Props = {
-  id: number;
-  name: string;
-  image: string;
-};
+import { Pokemon } from "../../pages/App";
 
-export function PokemonCard({ id, name, image }: Props) {
+type Props = { pokemon: Pokemon };
+
+export function PokemonCard({ pokemon }: Props) {
   return (
     <div>
-      <img src={image} />
-      <h3>
-        #{id} {name[0].toUpperCase() + name.substring(1)}
-      </h3>
+      <img src={pokemon.sprites.other["official-artwork"].front_default} />
+      <strong>
+        #{pokemon.id} {pokemon.name[0].toUpperCase() + pokemon.name.substring(1)}
+      </strong>
     </div>
   );
 }

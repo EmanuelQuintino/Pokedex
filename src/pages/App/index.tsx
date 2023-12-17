@@ -2,17 +2,18 @@ import { useEffect, useState } from "react";
 import { PokemonCard } from "../../components/PokemonCard";
 import { Link, useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { API } from "../../services/api";
 
 type Inputs = {
   inputSearch: string;
 };
 
-type Pokemon = {
+export type Pokemon = {
   id: number;
   name: string;
   sprites: {
     other: {
-      home: {
+      "official-artwork": {
         front_default: string;
       };
     };
@@ -22,19 +23,20 @@ type Pokemon = {
 export function App() {
   const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
   const [offset, setOffset] = useState(0);
-  const [limit, setLimit] = useState(5);
+  const [limit, setLimit] = useState(20);
 
   const navigate = useNavigate();
 
-  const { register, handleSubmit } = useForm<Inputs>();
+  const { register, handleSubmit, reset } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
     navigate("/details/150");
+    reset();
   };
 
   function addLimit() {
-    setLimit((prevLimit) => prevLimit + 5);
+    setLimit((prevLimit) => prevLimit + 10);
   }
 
   function nextPage() {
@@ -47,16 +49,13 @@ export function App() {
 
   useEffect(() => {
     async function getPokemon() {
-      const API = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
-
       try {
-        const response = await fetch(API);
-        const data = await response.json();
+        const { data } = await API.get(`/pokemon?offset=${offset}&limit=${limit}`);
 
         const promisesPokemon = data.results.map(async (pokemon: { url: string }) => {
           const response = await fetch(pokemon.url);
           const data = await response.json();
-          return data as Pokemon;
+          return data;
         });
 
         const pokemonDataList = await Promise.all(promisesPokemon);
@@ -74,7 +73,6 @@ export function App() {
     <div>
       <h1>App</h1>
 
-      <button onClick={addLimit}>Incrementar limite</button>
       <button onClick={prevPage}>Página anterior</button>
       <button onClick={nextPage}>Próxima página</button>
 
@@ -93,14 +91,12 @@ export function App() {
       {pokemonList.map((pokemon) => {
         return (
           <Link to={`/details/${pokemon.id}`} key={pokemon.id}>
-            <PokemonCard
-              id={pokemon.id}
-              name={pokemon.name}
-              image={pokemon.sprites.other.home.front_default}
-            />
+            <PokemonCard pokemon={pokemon} />
           </Link>
         );
       })}
+
+      <button onClick={addLimit}>Mais 10</button>
     </div>
   );
 }
