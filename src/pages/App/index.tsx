@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PokemonCard } from "../../components/PokemonCard";
 import { Link, useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { API } from "../../services/api";
+import { useQueryPokemon } from "../../hooks/useQueryPokemon";
 
 type Inputs = {
   inputSearch: string;
@@ -11,6 +11,17 @@ type Inputs = {
 export type Pokemon = {
   id: number;
   name: string;
+  height: number;
+  weight: number;
+  types: {
+    type: {
+      name: string;
+    };
+  }[];
+  stats: {
+    base_stat: number;
+    stat: { name: string };
+  }[];
   sprites: {
     other: {
       "official-artwork": {
@@ -21,9 +32,10 @@ export type Pokemon = {
 };
 
 export function App() {
-  const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
+  // const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
   const [offset, setOffset] = useState(0);
   const [limit, setLimit] = useState(20);
+  const { data, isLoading, error, refetch } = useQueryPokemon({ limit, offset });
 
   const navigate = useNavigate();
 
@@ -47,34 +59,17 @@ export function App() {
     setOffset((prevOffset) => Math.max(prevOffset - limit, 0));
   }
 
-  useEffect(() => {
-    async function getPokemon() {
-      try {
-        const { data } = await API.get(`/pokemon?offset=${offset}&limit=${limit}`);
-
-        const promisesPokemon = data.results.map(async (pokemon: { url: string }) => {
-          const response = await fetch(pokemon.url);
-          const data = await response.json();
-          return data;
-        });
-
-        const pokemonDataList = await Promise.all(promisesPokemon);
-        setPokemonList(pokemonDataList);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    getPokemon();
-  }, [offset, limit]);
-
-  console.log(pokemonList);
+  console.log(data);
+  console.error(error);
 
   return (
     <div>
       <h1>App</h1>
+      <img src="logo-pokemon.png" alt="logo-pokemon" width={240} />
 
       <button onClick={prevPage}>Página anterior</button>
       <button onClick={nextPage}>Próxima página</button>
+      <button onClick={() => refetch()}>Refect</button>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="inputSearch" className="srOnly">
@@ -88,7 +83,10 @@ export function App() {
         />
       </form>
 
-      {pokemonList.map((pokemon) => {
+      {isLoading && <span>Loading...</span>}
+      {error && <span>Error...</span>}
+
+      {data?.map((pokemon) => {
         return (
           <Link to={`/details/${pokemon.id}`} key={pokemon.id}>
             <PokemonCard pokemon={pokemon} />
