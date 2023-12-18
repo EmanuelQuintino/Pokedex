@@ -1,8 +1,6 @@
 import { AppTheme } from "./styles";
 
-export type PokemonType = {
-  type: keyof AppTheme["colors"]["types"];
-};
+export type PokemonType = keyof AppTheme["colors"]["types"];
 
 export type Pokemon = {
   id: number;

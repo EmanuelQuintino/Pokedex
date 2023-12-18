@@ -25,7 +25,7 @@ export const appTheme = {
       fighting: "#d56723",
       dark: "#707070",
       bug: "#729f3f",
-      dragon: "linear-gradient(180deg, #53a4cf 50%, #f16e57 50%)",
+      dragon: "#53a4cf",
       electric: "#bba909",
       fairy: "#fdb9e9",
       shadow: "#7b62a3",

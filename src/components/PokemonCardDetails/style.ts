@@ -13,7 +13,7 @@ export const Container = styled.div`
   .pokemonImage {
     width: 32rem;
   }
-  
+
   .pokemonImage img {
     filter: drop-shadow(1px 1px 1px #000b);
     width: 100%;
@@ -47,6 +47,8 @@ export const Container = styled.div`
 
   .statusName {
     font-size: 2rem;
+    width: 24rem;
+    margin-left: auto;
   }
 
   progress {
@@ -64,7 +66,7 @@ export const Container = styled.div`
 
   .boxTypes {
     display: flex;
-    gap: 0.8rem;
-    margin-top: 1.2rem;
+    gap: 2.4rem;
+    margin-top: 1.6rem;
   }
 `;
