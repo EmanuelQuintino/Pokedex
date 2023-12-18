@@ -9,17 +9,15 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
     font-size: 1.6rem;
     color: ${({ theme }) => theme.colors.dark};
     border: none;
     font-family: "Montserrat", "Roboto", sans-serif;
+    
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
-  }
-
-  body {
-    background: ${({ theme }) => theme.colors.light};
   }
     
   button {
