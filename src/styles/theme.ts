@@ -1,18 +1,14 @@
 export const appTheme = {
   colors: {
-    app: {
-      background: "#F2F2F2",
-      color: "#e5e5e5",
-      primary: "#0477BF",
-      primary500: "#030A8C",
-      primaryHover: "#048ABF",
-      secondary: "#023E73",
-      complementary: "#F2B705",
-      complementary500: "#D98E04",
-      light: "#f2f2f2",
-      dark: "#0D0D0D",
-      danger: "#F20732",
-    },
+    light: "#f2f2f2",
+    dark: "#0D0D0D",
+    primary: "#0477BF",
+    primary500: "#030A8C",
+    primaryHover: "#048ABF",
+    secondary: "#023E73",
+    complementary: "#F2B705",
+    complementary500: "#D98E04",
+    danger: "#F20732",
     type: {
       fire: "#ff7402",
       grass: "#9bcc50",

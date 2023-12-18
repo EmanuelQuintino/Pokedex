@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-size: 1.6rem;
-    color: ${({ theme }) => theme.colors.app.dark};
+    color: ${({ theme }) => theme.colors.dark};
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.colors.app.background};
+    background: ${({ theme }) => theme.colors.light};
   }
     
   button {
@@ -52,7 +52,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .queryError {
-    color: ${({ theme }) => theme.colors.app.danger};
+    color: ${({ theme }) => theme.colors.danger};
     text-align: center;
     margin-top: 1.6rem;
   }
