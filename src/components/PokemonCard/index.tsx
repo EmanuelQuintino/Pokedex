@@ -5,8 +5,6 @@ import { Container } from "./style";
 type Props = { pokemon: Pokemon };
 
 export function PokemonCard({ pokemon }: Props) {
-  // console.log(pokemon);
-
   return (
     <Container>
       <img

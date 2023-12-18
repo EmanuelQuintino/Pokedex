@@ -1,10 +1,6 @@
-import { AppTheme } from "../../@types/styles";
 import { Container } from "./style";
+import { PokemonTypePorps } from "../../@types/pokemon";
 
-export type PokemonType = {
-  type: keyof AppTheme["colors"]["types"];
-};
-
-export function PokemonType({ type }: PokemonType) {
+export function PokemonType({ type }: PokemonTypePorps) {
   return <Container type={type}>{type}</Container>;
 }

@@ -1,3 +1,9 @@
+import { AppTheme } from "./styles";
+
+export type PokemonTypePorps = {
+  type: keyof AppTheme["colors"]["types"];
+};
+
 export type Pokemon = {
   id: number;
   name: string;
@@ -5,12 +11,14 @@ export type Pokemon = {
   weight: number;
   types: {
     type: {
-      name: string;
+      name: PokemonType;
     };
   }[];
   stats: {
     base_stat: number;
-    stat: { name: string };
+    stat: {
+      name: string;
+    };
   }[];
   sprites: {
     other: {

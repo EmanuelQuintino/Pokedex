@@ -1,4 +1,5 @@
-import { Pokemon } from "../../pages/App";
+import { Pokemon } from "../../@types/pokemon";
+import { Container } from "./style";
 
 type Props = { pokemon: Pokemon };
 
@@ -6,7 +7,7 @@ export function PokemonCardDetails({ pokemon }: Props) {
   console.log(pokemon);
 
   return (
-    <div>
+    <Container>
       <img
         src={pokemon.sprites.other["official-artwork"].front_default}
         alt={pokemon.name}
@@ -31,6 +32,6 @@ export function PokemonCardDetails({ pokemon }: Props) {
       {pokemon.types.map((type) => {
         return <div key={type.type.name}>{type.type.name}</div>;
       })}
-    </div>
+    </Container>
   );
 }
