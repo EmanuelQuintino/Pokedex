@@ -11,7 +11,8 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     font-size: 1.6rem;
     color: ${({ theme }) => theme.colors.dark};
-    font-family: 'Roboto', sans-serif;
+    border: none;
+    font-family: "Montserrat", "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
@@ -23,7 +24,6 @@ export const GlobalStyles = createGlobalStyle`
     
   button {
     background: none;
-    border: none;
     cursor: pointer;
   }
 
