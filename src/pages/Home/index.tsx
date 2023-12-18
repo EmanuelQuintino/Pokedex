@@ -2,29 +2,7 @@ import { useState } from "react";
 import { PokemonCard } from "../../components/PokemonCard";
 import { Link } from "react-router-dom";
 import { useQueryPokemon } from "../../hooks/useQueryPokemon";
-
-export type Pokemon = {
-  id: number;
-  name: string;
-  height: number;
-  weight: number;
-  types: {
-    type: {
-      name: string;
-    };
-  }[];
-  stats: {
-    base_stat: number;
-    stat: { name: string };
-  }[];
-  sprites: {
-    other: {
-      "official-artwork": {
-        front_default: string;
-      };
-    };
-  };
-};
+import { Container } from "./style";
 
 export function Home() {
   // const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
@@ -48,7 +26,7 @@ export function Home() {
   if (error) console.error(error);
 
   return (
-    <div>
+    <Container>
       <h1>App</h1>
 
       <button onClick={prevPage}>&lt; Anterior</button>
@@ -58,15 +36,17 @@ export function Home() {
       {isLoading && <span>Loading...</span>}
       {error && <span>Error...</span>}
 
-      {data?.map((pokemon) => {
-        return (
-          <Link to={`/details/${pokemon.id}`} key={pokemon.id}>
-            <PokemonCard pokemon={pokemon} />
-          </Link>
-        );
-      })}
+      <div className="gridCards">
+        {data?.map((pokemon) => {
+          return (
+            <Link to={`/details/${pokemon.id}`} key={pokemon.id}>
+              <PokemonCard pokemon={pokemon} />
+            </Link>
+          );
+        })}
+      </div>
 
       <button onClick={addLimit}>Mais 10</button>
-    </div>
+    </Container>
   );
 }
