@@ -31,5 +31,13 @@ export const appTheme = {
       shadow: "#7b62a3",
       unknow: "#757575",
     },
+    size: {
+      vs: 0.8,
+      sm: 1.2,
+      md: 1.6,
+      lg: 2.0,
+      vl: 2.4,
+      el: 3.2,
+    },
   },
 };

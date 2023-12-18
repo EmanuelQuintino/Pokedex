@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { PokemonTypePorps } from "../../@types/pokemon";
+import { PokemonType } from "../../@types/pokemon";
 
-export const Container = styled.span<PokemonTypePorps>`
+export const Container = styled.span<PokemonType>`
   background: ${({ theme, type }) => theme.colors.types[type]};
   color: ${({ theme }) => theme.colors.light};
   font-size: 1.2rem;

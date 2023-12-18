@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
   :root {
     font-size: 62.5%;
+    scroll-behavior: smooth;
   }
   
   * {
@@ -15,9 +16,10 @@ export const GlobalStyles = createGlobalStyle`
     border: none;
     font-family: "Montserrat", "Roboto", sans-serif;
     
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    scroll-behavior: smooth;
   }
     
   button {
