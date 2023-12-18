@@ -5,9 +5,23 @@ export const Container = styled.div`
   padding: 2.4rem;
   border-radius: 0.8rem;
   box-shadow: 1px 1px 2px 1px #0002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
   img {
     filter: drop-shadow(1px 1px 1px #000b);
     width: 16rem;
+  }
+
+  strong {
+    margin-top: 1.2rem;
+  }
+
+  .boxTypes {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
   }
 `;

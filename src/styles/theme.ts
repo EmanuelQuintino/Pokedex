@@ -9,7 +9,7 @@ export const appTheme = {
     complementary: "#F2B705",
     complementary500: "#D98E04",
     danger: "#F20732",
-    type: {
+    types: {
       fire: "#ff7402",
       grass: "#9bcc50",
       steel: "#9eb7b8",
