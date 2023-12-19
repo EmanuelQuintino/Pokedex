@@ -19,8 +19,8 @@ export function Details() {
         <button>&lt; voltar</button>
       </Link>
 
-      {isLoading && <span>Loading...</span>}
-      {error && <span>Error...</span>}
+      {isLoading && <span className="feedbackList">Loading...</span>}
+      {!isLoading && error && <span className="feedbackList">Error...</span>}
 
       {data && (
         <>

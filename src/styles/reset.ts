@@ -43,29 +43,23 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .inputError {
-    color: red;
+    color: ${({ theme }) => theme.colors.complementary};
     display: block;
     position: absolute;
-    font-size: 1.0rem;
-    margin-top: .4rem;
-    right: 0;
+    font-size: 1.2rem;
+    margin-top: 0.4rem;
   }
 
-  .queryError {
-    color: ${({ theme }) => theme.colors.danger};
-    text-align: center;
-    margin-top: 1.6rem;
+  .feedbackList {
+    width: 100%;
+    margin: 15% auto;
+    font-weight: 700;
+    font-size: 2.0rem;
+    color: lightgray;
+    display: grid;
+    place-content: center;
   }
-
-  .buttonBackPage {
-    font-size: 1.6rem;
-    font-weight: 500;
-
-    :hover {
-      text-decoration: underline;
-    }
-  }
-
+  
   .spinner {
     animation: spinnerRotate 1s linear infinite;
     font-size: 4.2rem;
@@ -73,17 +67,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 50% auto;
     color: lightgray;
   }
-
-  .messageEmptyList {
-    width: 100%;
-    margin: 50% auto 50%;
-    font-weight: 700;
-    font-size: 2.0rem;
-    color: lightgray;
-    display: grid;
-    place-content: center;
-  }
-
+  
   @keyframes spinnerRotate {
     to {
         transform: rotate(360deg);

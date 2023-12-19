@@ -7,7 +7,7 @@ import { Container } from "./style";
 export function Home() {
   // const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
   const [offset, setOffset] = useState(0);
-  const [limit] = useState(40);
+  const [limit] = useState(30);
   const { data, isLoading, error } = useQueryPokemon({ limit, offset });
 
   function nextPage() {
@@ -23,14 +23,8 @@ export function Home() {
 
   return (
     <Container>
-      <div className="paginationButtons">
-        <button onClick={prevPage}>&lt; Anterior</button>
-        <span className="numberPage">0</span>
-        <button onClick={nextPage}>Próxima &gt;</button>
-      </div>
-
-      {isLoading && <span>Loading...</span>}
-      {error && <span>Error...</span>}
+      {isLoading && <span className="feedbackList">Loading...</span>}
+      {!isLoading && error && <span className="feedbackList">Error...</span>}
 
       <div className="gridCards">
         {data?.map((pokemon) => {
@@ -44,7 +38,7 @@ export function Home() {
 
       <div className="paginationButtons">
         <button onClick={prevPage}>&lt; Anterior</button>
-        <span className="numberPage">0</span>
+        <span className="numberPage">999/999</span>
         <button onClick={nextPage}>Próxima &gt;</button>
       </div>
     </Container>

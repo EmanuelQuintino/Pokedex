@@ -41,7 +41,7 @@ export function Header() {
               required: "Preencha id, nome ou tipo do pokémon",
             })}
           />
-          <span>{errors.inputSearch?.message}</span>
+          <span className="inputError">{errors.inputSearch?.message}</span>
         </section>
         <button type="submit">Pesquisar</button>
       </form>

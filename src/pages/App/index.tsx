@@ -10,6 +10,10 @@ export function App() {
       <main>
         <Outlet />
       </main>
+
+      <footer>
+        <h1>Reprograma Jucás</h1>
+      </footer>
     </Container>
   );
 }

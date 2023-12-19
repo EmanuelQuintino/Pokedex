@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { API } from "../services/api";
 
-async function getPokemon({ limit = 40, offset = 0 }) {
+async function getPokemon({ limit = 30, offset = 0 }) {
   const { data } = await API.get(`/pokemon?limit=${limit}&offset=${offset}`);
 
   const pokemonPromiseList = data.results.map(async (pokemon: { url: string }) => {
@@ -13,9 +13,9 @@ async function getPokemon({ limit = 40, offset = 0 }) {
   return pokemonDataList;
 }
 
-export function useQueryPokemon({ limit, offset } = { limit: 40, offset: 0 }) {
+export function useQueryPokemon({ limit, offset } = { limit: 30, offset: 0 }) {
   const query = useQuery({
-    queryKey: ["getAllPokemon", { limit, offset }],
+    queryKey: ["getAllPokemon", limit, offset],
     queryFn: () => getPokemon({ limit, offset }),
   });
 
