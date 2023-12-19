@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { PokemonCardDetails } from "../../components/PokemonCardDetails";
 import { useQueryPokemonID } from "../../hooks/useQueryPokemonID";
+import { Container } from "./style";
 
 type Params = {
   id: string;
@@ -13,8 +14,8 @@ export function Details() {
   if (error) console.error(error);
 
   return (
-    <div>
-      <Link to={"/"}>
+    <Container>
+      <Link to={"/"} className="buttonBackPage">
         <button>&lt; voltar</button>
       </Link>
 
@@ -26,6 +27,6 @@ export function Details() {
           <PokemonCardDetails pokemon={data} />
         </>
       )}
-    </div>
+    </Container>
   );
 }

@@ -57,10 +57,9 @@ export const GlobalStyles = createGlobalStyle`
     margin-top: 1.6rem;
   }
 
-  .backPageButton {
+  .buttonBackPage {
     font-size: 1.6rem;
     font-weight: 500;
-    margin-top: 2.4rem;
 
     :hover {
       text-decoration: underline;

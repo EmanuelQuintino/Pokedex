@@ -2,19 +2,21 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.colors.light};
-  padding: 0rem 2.4rem;
+  padding: 2.4rem;
   border-radius: 0.8rem;
   box-shadow: 1px 1px 2px 1px #0002;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12.0rem;
+  gap: 12rem;
   margin-left: -36px;
   width: 100%;
   margin: auto;
 
   .pokemonImage {
-    width: 36rem;
+    width: 32rem;
+    border-radius: 100%;
+    background: #1111;
   }
 
   .pokemonImage img {
