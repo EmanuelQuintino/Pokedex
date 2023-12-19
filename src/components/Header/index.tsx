@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Container } from "./style";
 import { SubmitHandler, useForm } from "react-hook-form";
 import pokemonLogo from "../../assets/pokemon-logo.png";
@@ -24,7 +24,9 @@ export function Header() {
   };
   return (
     <Container>
-      <img src={pokemonLogo} alt="pokemon logo" />
+      <Link to={"/"}>
+        <img src={pokemonLogo} alt="pokemon logo" />
+      </Link>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <section>

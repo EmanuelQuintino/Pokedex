@@ -6,12 +6,12 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2.4rem;
+  padding: 2.4rem 3.2rem;
   box-shadow: 0px 0px 4px 2px #0006;
 
   img {
     filter: drop-shadow(1px 1px 1px #000b);
-    width: 16rem;
+    width: 20rem;
   }
 
   form {

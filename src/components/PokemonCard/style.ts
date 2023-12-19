@@ -9,6 +9,11 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  transition: scale 100ms;
+
+  &:hover {
+    scale: 1.05;
+  }
 
   img {
     filter: drop-shadow(1px 1px 1px #000b);
