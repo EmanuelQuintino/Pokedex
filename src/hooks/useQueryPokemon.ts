@@ -3,6 +3,7 @@ import { API } from "../services/api";
 
 async function getPokemon({ limit = 30, offset = 0 }) {
   const { data } = await API.get(`/pokemon?limit=${limit}&offset=${offset}`);
+  const totalPokemon = data.count;
 
   const pokemonPromiseList = data.results.map(async (pokemon: { url: string }) => {
     const response = await fetch(pokemon.url);
@@ -10,7 +11,7 @@ async function getPokemon({ limit = 30, offset = 0 }) {
     return data;
   });
   const pokemonDataList = await Promise.all(pokemonPromiseList);
-  return pokemonDataList;
+  return { pokemonDataList, totalPokemon };
 }
 
 export function useQueryPokemon({ limit, offset } = { limit: 30, offset: 0 }) {

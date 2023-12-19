@@ -10,12 +10,15 @@ export function Home() {
   const [limit] = useState(30);
   const { data, isLoading, error } = useQueryPokemon({ limit, offset });
 
+  const currentPage = Math.ceil((offset + 1) / limit);
+  const totalPages = Math.ceil(data?.totalPokemon / limit);
+
   function nextPage() {
     setOffset((prevOffset) => prevOffset + limit);
   }
 
   function prevPage() {
-    setOffset((prevOffset) => Math.max(prevOffset - limit, 0));
+    setOffset((prevOffset) => prevOffset - limit);
   }
 
   console.log(data);
@@ -27,7 +30,7 @@ export function Home() {
       {!isLoading && error && <span className="feedbackList">Error...</span>}
 
       <div className="gridCards">
-        {data?.map((pokemon) => {
+        {data?.pokemonDataList?.map((pokemon) => {
           return (
             <Link to={`/details/${pokemon.id}`} key={pokemon.id}>
               <PokemonCard pokemon={pokemon} />
@@ -37,9 +40,17 @@ export function Home() {
       </div>
 
       <div className="paginationButtons">
-        <button onClick={prevPage}>&lt; Anterior</button>
-        <span className="numberPage">999/999</span>
-        <button onClick={nextPage}>Próxima &gt;</button>
+        <button onClick={prevPage} disabled={currentPage <= 1}>
+          &lt; Anterior
+        </button>
+
+        <span className="numberPage">
+          {currentPage}/{totalPages || "..."}
+        </span>
+
+        <button onClick={nextPage} disabled={currentPage >= totalPages}>
+          Próxima &gt;
+        </button>
       </div>
     </Container>
   );
