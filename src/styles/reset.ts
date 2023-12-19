@@ -44,10 +44,11 @@ export const GlobalStyles = createGlobalStyle`
 
   .inputError {
     color: ${({ theme }) => theme.colors.complementary};
+    font-size: 1.2rem;
     display: block;
     position: absolute;
-    font-size: 1.2rem;
     margin-top: 0.4rem;
+    text-shadow: 1px 1px 1px #0008;
   }
 
   .feedbackList {

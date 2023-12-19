@@ -25,14 +25,16 @@ export const Container = styled.header`
   input {
     border-radius: 0.8rem;
     padding: 0.8rem 1.6rem;
+    box-shadow: 1px 1px 2px 0px #0008;
   }
 
   button {
     border-radius: 0.8rem;
     padding: 0.8rem 1.6rem;
-    font-weight: 500;
+    font-weight: 700;
     background: ${({ theme }) => theme.colors.complementary};
     color: ${({ theme }) => theme.colors.light};
+    box-shadow: 1px 1px 2px 0px #0008;
   }
 
   button:hover {

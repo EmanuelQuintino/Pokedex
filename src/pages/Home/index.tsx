@@ -23,6 +23,7 @@ export function Home() {
 
   console.log(data);
   if (error) console.error(error);
+  console.log(totalPages);
 
   return (
     <Container>
@@ -39,13 +40,14 @@ export function Home() {
         })}
       </div>
 
-      <div className="paginationButtons">
+      <div className="paginationComponent">
         <button onClick={prevPage} disabled={currentPage <= 1}>
           &lt; Anterior
         </button>
 
         <span className="numberPage">
-          {currentPage}/{totalPages || "..."}
+          {String(currentPage).padStart(2, "0")} /{" "}
+          {String(totalPages || "...").padStart(2, "0")}
         </span>
 
         <button onClick={nextPage} disabled={currentPage >= totalPages}>
