@@ -19,16 +19,20 @@ export const Container = styled.div`
     width: 32rem;
     margin: 3.2rem auto 0;
     padding: 0.6rem 1.2rem;
-    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    .numberPage {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
 
     button {
       background: ${({ theme }) => theme.colors.danger};
       color: ${({ theme }) => theme.colors.light};
       font-weight: 700;
-      padding: 0.6rem 1.2rem;
+      padding: 0.8rem 1.6rem;
       border-radius: 0.8rem;
       box-shadow: 1px 1px 2px 0px #0008;
       text-shadow: 1px 1px 2px #0004;
