@@ -7,16 +7,13 @@ export const Container = styled.div`
   box-shadow: 1px 1px 2px 1px #0002;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12rem;
-  margin-left: -36px;
-  width: 100%;
-  margin: auto;
+  justify-content: space-evenly;
 
   .pokemonImage {
     width: 32rem;
     border-radius: 100%;
     background: #1111;
+    box-shadow: 1px 1px 2px 1px #0002;
   }
 
   .pokemonImage img {
@@ -28,7 +25,7 @@ export const Container = styled.div`
     font-size: 2.8rem;
   }
 
-  .boxStatus {
+  .sizePokemon {
     display: flex;
     gap: 2.4rem;
     margin-top: 0.8rem;
@@ -36,6 +33,12 @@ export const Container = styled.div`
     span {
       color: gray;
     }
+  }
+
+  .boxTypes {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.6rem;
   }
 
   .boxStatusBase {
@@ -58,11 +61,5 @@ export const Container = styled.div`
     font-size: 1.6rem;
     width: 4.2rem;
     text-align: right;
-  }
-
-  .boxTypes {
-    display: flex;
-    gap: 0.8rem;
-    margin-top: 1.6rem;
   }
 `;

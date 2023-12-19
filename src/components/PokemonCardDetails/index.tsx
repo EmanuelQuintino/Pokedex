@@ -16,26 +16,14 @@ export function PokemonCardDetails({ pokemon }: Props) {
         />
       </div>
 
-      <div className="box">
+      <div className="boxStatus">
         <strong>
           #{pokemon.id} {pokemon.name[0].toUpperCase() + pokemon.name.substring(1)}
         </strong>
 
-        <div className="boxStatus">
+        <div className="sizePokemon">
           <span>Height: {pokemon.height}0cm</span>
           <span>Weight: {pokemon.weight}kg</span>
-        </div>
-
-        <div className="boxStatusBase">
-          {pokemon.stats?.map((status) => {
-            return (
-              <div key={status.stat.name} className="statusBase">
-                <span className="statusName">{status.stat.name}</span>
-                <progress max={300} value={status.base_stat} />
-                <span className="statusValue">{status.base_stat}</span>
-              </div>
-            );
-          })}
         </div>
 
         <div className="boxTypes">
@@ -43,6 +31,18 @@ export function PokemonCardDetails({ pokemon }: Props) {
             return <CardType key={type.type.name} type={type.type.name} size={18} />;
           })}
         </div>
+      </div>
+
+      <div className="boxStatusBase">
+        {pokemon.stats?.map((status) => {
+          return (
+            <div key={status.stat.name} className="statusBase">
+              <span className="statusName">{status.stat.name}</span>
+              <progress max={300} value={status.base_stat} />
+              <span className="statusValue">{status.base_stat}</span>
+            </div>
+          );
+        })}
       </div>
     </Container>
   );
