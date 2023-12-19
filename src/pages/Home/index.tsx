@@ -7,12 +7,8 @@ import { Container } from "./style";
 export function Home() {
   // const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
   const [offset, setOffset] = useState(0);
-  const [limit, setLimit] = useState(40);
-  const { data, isLoading, error, refetch } = useQueryPokemon({ limit, offset });
-
-  function addLimit() {
-    setLimit((prevLimit) => prevLimit + 10);
-  }
+  const [limit] = useState(40);
+  const { data, isLoading, error } = useQueryPokemon({ limit, offset });
 
   function nextPage() {
     setOffset((prevOffset) => prevOffset + limit);
@@ -27,11 +23,11 @@ export function Home() {
 
   return (
     <Container>
-      <h1>App</h1>
-
-      <button onClick={prevPage}>&lt; Anterior</button>
-      <button onClick={nextPage}>Próxima &gt;</button>
-      <button onClick={() => refetch()}>Refect</button>
+      <div className="paginationButtons">
+        <button onClick={prevPage}>&lt; Anterior</button>
+        <span className="numberPage">0</span>
+        <button onClick={nextPage}>Próxima &gt;</button>
+      </div>
 
       {isLoading && <span>Loading...</span>}
       {error && <span>Error...</span>}
@@ -46,7 +42,11 @@ export function Home() {
         })}
       </div>
 
-      <button onClick={addLimit}>Mais 10</button>
+      <div className="paginationButtons">
+        <button onClick={prevPage}>&lt; Anterior</button>
+        <span className="numberPage">0</span>
+        <button onClick={nextPage}>Próxima &gt;</button>
+      </div>
     </Container>
   );
 }
