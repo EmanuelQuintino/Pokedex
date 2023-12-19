@@ -7,7 +7,7 @@ import { Container } from "./style";
 export function Home() {
   // const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
   const [offset, setOffset] = useState(0);
-  const [limit, setLimit] = useState(20);
+  const [limit, setLimit] = useState(40);
   const { data, isLoading, error, refetch } = useQueryPokemon({ limit, offset });
 
   function addLimit() {

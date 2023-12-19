@@ -9,9 +9,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 5.6rem;
+  margin-left: -36px;
 
   .pokemonImage {
-    width: 32rem;
+    width: 36rem;
   }
 
   .pokemonImage img {
@@ -20,7 +21,6 @@ export const Container = styled.div`
   }
 
   strong {
-    display: block;
     font-size: 2.8rem;
   }
 
@@ -34,39 +34,31 @@ export const Container = styled.div`
     }
   }
 
-  .boxBaseStatus {
-    margin-top: 0.8rem;
+  .boxStatusBase {
+    margin-top: 1.6rem;
   }
 
-  .baseStatus {
+  .statusBase {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0.8rem;
   }
 
   .statusName {
-    font-size: 2rem;
-    width: 24rem;
+    font-size: 1.6rem;
+    width: 13rem;
     margin-left: auto;
-  }
-
-  progress {
-    width: 24rem;
-    margin-left: auto;
-    color: red;
-    background: red;
   }
 
   .statusValue {
-    font-size: 2rem;
+    font-size: 1.6rem;
     width: 4.2rem;
     text-align: right;
   }
 
   .boxTypes {
     display: flex;
-    gap: 2.4rem;
+    gap: 0.8rem;
     margin-top: 1.6rem;
   }
 `;

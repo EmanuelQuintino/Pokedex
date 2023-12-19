@@ -26,10 +26,10 @@ export function PokemonCardDetails({ pokemon }: Props) {
           <span>Weight: {pokemon.weight}kg</span>
         </div>
 
-        <div className="boxBaseStatus">
+        <div className="boxStatusBase">
           {pokemon.stats?.map((status) => {
             return (
-              <div key={status.stat.name} className="baseStatus">
+              <div key={status.stat.name} className="statusBase">
                 <span className="statusName">{status.stat.name}</span>
                 <progress max={300} value={status.base_stat} />
                 <span className="statusValue">{status.base_stat}</span>
@@ -40,7 +40,7 @@ export function PokemonCardDetails({ pokemon }: Props) {
 
         <div className="boxTypes">
           {pokemon.types.map((type) => {
-            return <CardType key={type.type.name} type={type.type.name} size={20} />;
+            return <CardType key={type.type.name} type={type.type.name} size={18} />;
           })}
         </div>
       </div>
