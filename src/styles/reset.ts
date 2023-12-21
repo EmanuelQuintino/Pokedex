@@ -60,32 +60,14 @@ export const GlobalStyles = createGlobalStyle`
     display: grid;
     place-content: center;
   }
-  
-  .spinner {
-    animation: spinnerRotate 1s linear infinite;
-    font-size: 4.2rem;
-    display: block;
-    margin: 50% auto;
-    color: lightgray;
-  }
-  
-  @keyframes spinnerRotate {
-    to {
-        transform: rotate(360deg);
-    }
-  }
 
   @media (min-width: 640px) {
     .inputError {
       font-size: 1.2rem;
     }
-
-    .spinner {
-      margin: 20% auto 25%;
-    }
     
-    .messageEmptyList {
-      margin: 20% auto 25%;
+    .feedbackList {
+      margin: 15% auto;
     }
   }
 `;

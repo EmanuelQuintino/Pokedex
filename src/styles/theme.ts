@@ -22,7 +22,7 @@ export const appTheme = {
       normal: "#a4acaf",
       poison: "#7e0058",
       rock: "#a38c21",
-      fighting: "#d56723",
+      fighting: "#D34063",
       dark: "#707070",
       bug: "#729f3f",
       dragon: "#53a4cf",
