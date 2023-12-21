@@ -41,23 +41,23 @@ export const Container = styled.div`
     margin-top: 1.6rem;
   }
 
-  .boxStatusBase {
+  .boxStats {
     margin-top: 1.6rem;
   }
 
-  .statusBase {
+  .stats {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .statusName {
+  .statsName {
     font-size: 1.6rem;
     width: 13rem;
     margin-left: auto;
   }
 
-  .statusValue {
+  .statsValue {
     font-size: 1.6rem;
     width: 4.2rem;
     text-align: right;

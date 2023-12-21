@@ -33,13 +33,13 @@ export function PokemonCardDetails({ pokemon }: Props) {
         </div>
       </div>
 
-      <div className="boxStatusBase">
+      <div className="boxStats">
         {pokemon.stats?.map((status) => {
           return (
-            <div key={status.stat.name} className="statusBase">
-              <span className="statusName">{status.stat.name}</span>
+            <div key={status.stat.name} className="stats">
+              <span className="statsName">{status.stat.name}</span>
               <progress max={300} value={status.base_stat} />
-              <span className="statusValue">{status.base_stat}</span>
+              <span className="statsValue">{status.base_stat}</span>
             </div>
           );
         })}
