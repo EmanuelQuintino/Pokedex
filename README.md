@@ -34,9 +34,9 @@ $ npm install
 $ npm run dev
 ```
 
-## Contribuindo
+## Contribuição
 
-Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novas funcionalidades. Basta seguir estas etapas:
+Para contribuir com melhorias, correções de bugs ou novas funcionalidades, basta seguir estas etapas:
 
 1. Faça um fork do projeto
 2. Crie uma branch para sua contribuição: git checkout -b name-sobrenome
