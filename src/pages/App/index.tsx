@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { Container } from "./style";
+import { Footer } from "../../components/Footer";
 
 export function App() {
   return (
@@ -11,9 +12,7 @@ export function App() {
         <Outlet />
       </main>
 
-      <footer>
-        <h1>Reprograma Jucás</h1>
-      </footer>
+      <Footer />
     </Container>
   );
 }

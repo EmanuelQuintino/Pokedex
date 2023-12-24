@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  min-height: 100vh;
+  
   h1 {
     margin-top: 2.4rem;
     font-size: 3.2rem;
