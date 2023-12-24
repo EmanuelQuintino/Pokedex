@@ -1,6 +1,7 @@
 import { Pokemon } from "../../@types/pokemon";
 import { CardType } from "../CardType";
 import { Container } from "./style";
+import pokeball from "../../assets/pokeball.png";
 
 type Props = { pokemon: Pokemon };
 
@@ -9,7 +10,7 @@ export function PokemonCardDetails({ pokemon }: Props) {
     <Container>
       <div className="pokemonImage">
         <img
-          src={pokemon.sprites.other["official-artwork"].front_default}
+          src={pokemon.sprites.other["official-artwork"].front_default || pokeball}
           alt={pokemon.name}
         />
       </div>
