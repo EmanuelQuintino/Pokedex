@@ -34,6 +34,12 @@ $ npm install
 $ npm run dev
 ```
 
+## Variável Ambiente
+
+```ini
+VITE_API="https://pokeapi.co/api/v2"
+```
+
 ## Contribuição
 
 Para contribuir com melhorias, correções de bugs ou novas funcionalidades, basta seguir estas etapas:
