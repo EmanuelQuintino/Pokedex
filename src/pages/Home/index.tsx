@@ -9,6 +9,7 @@ export function Home() {
   const [limit] = useState(30);
   const [totalPages, setTotalPages] = useState(0);
   const { data, isLoading, error } = useQueryPokemon({ limit, offset });
+  console.log(data);
 
   const currentPage = Math.ceil((offset + 1) / limit);
 
@@ -31,15 +32,13 @@ export function Home() {
 
   return (
     <Container>
-      <h1>Todos os Pokémon</h1>
-
-      {isLoading && <span className="feedbackList">Loading...</span>}
-      {!isLoading && error && <span className="feedbackList">Error...</span>}
+      {isLoading && <span className="feedbackLoading">Loading...</span>}
+      {!isLoading && error && <span className="feedbackLoading">Error...</span>}
 
       <div className="gridCards">
         {data?.pokemonDataList?.map((pokemon) => {
           return (
-            <Link to={`/details/${pokemon.id}`} key={pokemon.id}>
+            <Link to={`/details/${pokemon.name}`} key={pokemon.name}>
               <PokemonCard pokemon={pokemon} />
             </Link>
           );

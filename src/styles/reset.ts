@@ -51,7 +51,7 @@ export const GlobalStyles = createGlobalStyle`
     text-shadow: 1px 1px 1px #0008;
   }
 
-  .feedbackList {
+  .feedbackLoading {
     width: 100%;
     margin: 15% auto;
     font-weight: 700;
@@ -66,7 +66,7 @@ export const GlobalStyles = createGlobalStyle`
       font-size: 1.2rem;
     }
     
-    .feedbackList {
+    .feedbackLoading {
       margin: 15% auto;
     }
   }

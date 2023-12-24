@@ -22,6 +22,7 @@ export const Container = styled.div`
 
   strong {
     margin-top: 1.2rem;
+    text-transform: capitalize;
   }
 
   .boxTypes {

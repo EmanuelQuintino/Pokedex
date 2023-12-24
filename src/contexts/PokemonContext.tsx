@@ -12,17 +12,19 @@ export function PokemonProvider({ children }: PropsWithChildren) {
   const [allPokemon, setAllPokemon] = useState<Pokemon[]>([]);
 
   async function getAllPokemon() {
-    const { data } = await API.get(`pokemon?limit=100000&offset=0`);
+    const { data } = await API.get(`/pokemon?limit=100000&offset=0`);
 
-    const pokemonPromiseList = data.results.map(async (pokemon: { url: string }) => {
-      const response = await fetch(pokemon.url);
-      const data = await response.json();
-      return data;
-    });
+    console.log(data);
 
-    const allPokemonDataList = await Promise.all(pokemonPromiseList);
+    // const pokemonPromiseList = data.results.map(async (pokemon: { url: string }) => {
+    //   const response = await fetch(pokemon.url);
+    //   const data = await response.json();
+    //   return data;
+    // });
 
-    setAllPokemon([...allPokemon, ...allPokemonDataList]);
+    // const allPokemonDataList = await Promise.all(pokemonPromiseList);
+
+    setAllPokemon([...data.results]);
   }
 
   useEffect(() => {

@@ -1,25 +1,39 @@
+import { useEffect, useState } from "react";
 import { Pokemon } from "../../@types/pokemon";
 import { CardType } from "../CardType";
 import { Container } from "./style";
+import { useQueryPokemonID } from "../../hooks/useQueryPokemonID";
 
-type Props = { pokemon: Pokemon };
+type Props = { data: Pokemon };
 
-export function PokemonCard({ pokemon }: Props) {
+export function PokemonCard({ pokemon }) {
+  const [pokemonData, setPokemonData] = useState<Pokemon>({} as Pokemon);
+  const pokemonID = pokemon.url.split("/")[6];
+  const { data } = useQueryPokemonID(pokemonID);
+  console.log(data);
+
   return (
     <Container>
-      <img
-        src={pokemon.sprites.other["official-artwork"].front_default}
-        alt={pokemon.name}
-      />
-      <strong>
-        #{pokemon.id} {pokemon.name[0].toUpperCase() + pokemon.name.substring(1)}
-      </strong>
+      {data ? (
+        <>
+          <img
+            src={data.sprites.other["official-artwork"].front_default}
+            alt={data.name}
+          />
 
-      <div className="boxTypes">
-        {pokemon.types.map((type) => {
-          return <CardType key={type.type.name} type={type.type.name} />;
-        })}
-      </div>
+          <strong>
+            #{data.id} {data.name}
+          </strong>
+
+          <div className="boxTypes">
+            {data.types.map((type) => {
+              return <CardType key={type.type.name} type={type.type.name} />;
+            })}
+          </div>
+        </>
+      ) : (
+        <p className="feedbackLoading">Loading...</p>
+      )}
     </Container>
   );
 }
