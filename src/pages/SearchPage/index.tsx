@@ -13,16 +13,12 @@ export function SearchPage() {
     if (query) return pokemon.name.includes(query);
   });
 
-  console.log(filteredPokemon);
-
   return (
     <Container>
       <h1>{`Encontrado ${filteredPokemon.length} resultado(s) para "${query}"`}</h1>
 
       <div className="gridCards">
         {filteredPokemon?.map((pokemon) => {
-          console.log(pokemon);
-
           return (
             <Link to={`/details/${pokemon.name}`} key={pokemon.name}>
               <PokemonCard pokemon={pokemon} />
