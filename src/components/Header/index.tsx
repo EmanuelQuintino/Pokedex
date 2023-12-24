@@ -18,7 +18,6 @@ export function Header() {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
     navigate(`/search?q=${data.inputSearch}`);
     reset();
   };

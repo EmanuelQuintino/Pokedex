@@ -27,7 +27,6 @@ export function Home() {
     }
   }, [data, limit, totalPages]);
 
-  console.log(data);
   if (error) console.error(error);
 
   return (
