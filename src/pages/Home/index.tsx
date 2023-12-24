@@ -9,7 +9,6 @@ export function Home() {
   const [limit] = useState(30);
   const [totalPages, setTotalPages] = useState(0);
   const { data, isLoading, error } = useQueryPokemon({ limit, offset });
-  console.log(data);
 
   const currentPage = Math.ceil((offset + 1) / limit);
 
@@ -32,6 +31,7 @@ export function Home() {
 
   return (
     <Container>
+      <h1>{"Bem-vindo(a) à Pokédex do Reprograma Jucás"}</h1>
       {isLoading && <span className="feedbackLoading">Loading...</span>}
       {!isLoading && error && <span className="feedbackLoading">Error...</span>}
 

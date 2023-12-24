@@ -1,5 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { API } from "../services/api";
+import { PokemonBasicData } from "../contexts/PokemonContext";
+
+type PokemonAPI = {
+  pokemonDataList: PokemonBasicData[];
+  totalPokemon: number;
+};
 
 async function getPokemon({ limit = 30, offset = 0 }) {
   const { data } = await API.get(`/pokemon?limit=${limit}&offset=${offset}`);
@@ -12,7 +18,7 @@ async function getPokemon({ limit = 30, offset = 0 }) {
   // });
   // const pokemonDataList = await Promise.all(pokemonPromiseList);
   const pokemonDataList = data.results;
-  return { pokemonDataList, totalPokemon };
+  return { pokemonDataList, totalPokemon } as PokemonAPI;
 }
 
 export function useQueryPokemon({ limit, offset } = { limit: 30, offset: 0 }) {

@@ -1,20 +1,22 @@
 import { PropsWithChildren, createContext, useEffect, useState } from "react";
 import { API } from "../services/api";
-import { Pokemon } from "../@types/pokemon";
+
+export type PokemonBasicData = {
+  name: string;
+  url: string;
+};
 
 type Context = {
-  allPokemon: Pokemon[];
+  allPokemon: PokemonBasicData[];
 };
 
 export const PokemonContext = createContext({} as Context);
 
 export function PokemonProvider({ children }: PropsWithChildren) {
-  const [allPokemon, setAllPokemon] = useState<Pokemon[]>([]);
+  const [allPokemon, setAllPokemon] = useState<PokemonBasicData[]>([]);
 
   async function getAllPokemon() {
     const { data } = await API.get(`/pokemon?limit=100000&offset=0`);
-
-    console.log(data);
 
     // const pokemonPromiseList = data.results.map(async (pokemon: { url: string }) => {
     //   const response = await fetch(pokemon.url);

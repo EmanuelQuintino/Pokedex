@@ -21,8 +21,10 @@ export function SearchPage() {
 
       <div className="gridCards">
         {filteredPokemon?.map((pokemon) => {
+          console.log(pokemon);
+
           return (
-            <Link to={`/details/${pokemon.name}`} key={pokemon.id}>
+            <Link to={`/details/${pokemon.name}`} key={pokemon.name}>
               <PokemonCard pokemon={pokemon} />
             </Link>
           );

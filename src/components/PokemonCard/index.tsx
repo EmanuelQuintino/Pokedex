@@ -1,21 +1,20 @@
-import { useEffect, useState } from "react";
-import { Pokemon } from "../../@types/pokemon";
 import { CardType } from "../CardType";
 import { Container } from "./style";
 import { useQueryPokemonID } from "../../hooks/useQueryPokemonID";
+import { PokemonBasicData } from "../../contexts/PokemonContext";
 
-type Props = { data: Pokemon };
+type PropsAPI = {
+  pokemon: PokemonBasicData;
+};
 
-export function PokemonCard({ pokemon }) {
-  const [pokemonData, setPokemonData] = useState<Pokemon>({} as Pokemon);
+export function PokemonCard({ pokemon }: PropsAPI) {
   const pokemonID = pokemon.url.split("/")[6];
   const { data } = useQueryPokemonID(pokemonID);
-  console.log(data);
 
   return (
-    <Container>
-      {data ? (
-        <>
+    <>
+      {data && (
+        <Container>
           <img
             src={data.sprites.other["official-artwork"].front_default}
             alt={data.name}
@@ -30,10 +29,8 @@ export function PokemonCard({ pokemon }) {
               return <CardType key={type.type.name} type={type.type.name} />;
             })}
           </div>
-        </>
-      ) : (
-        <p className="feedbackLoading">Loading...</p>
+        </Container>
       )}
-    </Container>
+    </>
   );
 }

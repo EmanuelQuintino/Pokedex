@@ -1,16 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  min-height: 100vh;
-
   h1 {
     margin-top: 2.4rem;
     font-size: 3.2rem;
     color: lightgray;
+    text-align: center;
   }
 
   .gridCards {

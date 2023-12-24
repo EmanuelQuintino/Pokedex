@@ -37,7 +37,7 @@ export function Header() {
             id="inputSearch"
             placeholder="Pesquisar Pokémon"
             {...register("inputSearch", {
-              required: "Preencha id, nome ou tipo do pokémon",
+              required: "Preencha o nome do pokémon",
             })}
           />
           <span className="inputError">{errors.inputSearch?.message}</span>
