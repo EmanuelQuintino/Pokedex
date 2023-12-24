@@ -9,7 +9,7 @@ async function getPokemonID(id: string) {
 
 export function useQueryPokemonID(id: string) {
   const query = useQuery({
-    queryKey: ["getAllPokemon", id],
+    queryKey: ["getPokemonID", id],
     queryFn: () => getPokemonID(id),
   });
 

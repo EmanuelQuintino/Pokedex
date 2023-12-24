@@ -1,24 +1,16 @@
 import { useEffect, useState } from "react";
 import { PokemonCard } from "../../components/PokemonCard";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useQueryPokemon } from "../../hooks/useQueryPokemon";
 import { Container } from "./style";
 
-export function Home() {
-  const [offset, setOffset] = useState(0);
+export function SearchPage() {
+  const [offset] = useState(0);
   const [limit] = useState(30);
   const [totalPages, setTotalPages] = useState(0);
   const { data, isLoading, error } = useQueryPokemon({ limit, offset });
-
-  const currentPage = Math.ceil((offset + 1) / limit);
-
-  function nextPage() {
-    setOffset((prevOffset) => prevOffset + limit);
-  }
-
-  function prevPage() {
-    setOffset((prevOffset) => prevOffset - limit);
-  }
+  const searchParams = useSearchParams();
+  const query = searchParams[0].get("q");
 
   useEffect(() => {
     if (data) {
@@ -32,7 +24,7 @@ export function Home() {
 
   return (
     <Container>
-      <h1>Todos os Pokémon</h1>
+      <h1>{`Resultado(s) para: ${query}`}</h1>
 
       {isLoading && <span className="feedbackList">Loading...</span>}
       {!isLoading && error && <span className="feedbackList">Error...</span>}
@@ -45,21 +37,6 @@ export function Home() {
             </Link>
           );
         })}
-      </div>
-
-      <div className="paginationComponent">
-        <button onClick={prevPage} disabled={currentPage <= 1}>
-          &lt; Anterior
-        </button>
-
-        <span className="numberPage">
-          {String(currentPage).padStart(2, "0")} /{" "}
-          {String(totalPages || "...").padStart(2, "0")}
-        </span>
-
-        <button onClick={nextPage} disabled={currentPage >= totalPages}>
-          Próxima &gt;
-        </button>
       </div>
     </Container>
   );

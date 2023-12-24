@@ -16,7 +16,7 @@ async function getPokemon({ limit = 30, offset = 0 }) {
 
 export function useQueryPokemon({ limit, offset } = { limit: 30, offset: 0 }) {
   const query = useQuery({
-    queryKey: ["getAllPokemon", limit, offset],
+    queryKey: ["getPokemon", limit, offset],
     queryFn: () => getPokemon({ limit, offset }),
     // keepPreviousData : true
   });

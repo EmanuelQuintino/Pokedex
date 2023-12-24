@@ -19,7 +19,7 @@ export function Header() {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
-    navigate("/details/150");
+    navigate(`/search?q=${data.inputSearch}`);
     reset();
   };
   return (
