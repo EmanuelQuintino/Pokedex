@@ -58,7 +58,7 @@ export const Container = styled.div`
   }
 
   progress {
-    height: 1.2rem;
+    height: 1rem;
 
     &::-webkit-progress-value {
       background: ${({ theme }) => theme.colors.primary};

@@ -37,7 +37,7 @@ export function PokemonCardDetails({ pokemon }: Props) {
           return (
             <div key={status.stat.name} className="stats">
               <span className="statsName">{status.stat.name}</span>
-              <progress max={300} value={status.base_stat} />
+              <progress max={200} value={status.base_stat} />
               <span className="statsValue">{status.base_stat}</span>
             </div>
           );
