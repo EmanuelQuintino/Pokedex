@@ -12,7 +12,7 @@ export const Container = styled.div`
   .pokemonImage {
     width: 32rem;
     border-radius: 100%;
-    background: #1111;
+    background: #ddd8;
     box-shadow: 1px 1px 2px 1px #0002;
   }
 
