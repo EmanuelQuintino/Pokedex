@@ -57,6 +57,30 @@ export const Container = styled.div`
     margin-left: auto;
   }
 
+  progress {
+    height: 1.2rem;
+
+    &::-webkit-progress-value {
+      background: ${({ theme }) => theme.colors.primary};
+      border-radius: 8px;
+    }
+
+    &::-moz-progress-value {
+      background: ${({ theme }) => theme.colors.primary};
+      border-radius: 8px;
+    }
+
+    &::-webkit-progress-bar {
+      background: lightgray;
+      border-radius: 8px;
+    }
+
+    &::-moz-progress-bar {
+      background: lightgray;
+      border-radius: 8px;
+    }
+  }
+
   .statsValue {
     font-size: 1.6rem;
     width: 4.2rem;
