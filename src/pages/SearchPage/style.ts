@@ -5,7 +5,7 @@ export const Container = styled.div`
   
   h1 {
     margin-top: 2.4rem;
-    font-size: 3.2rem;
+    font-size: 2.8rem;
     color: lightgray;
     text-align: center;
   }
