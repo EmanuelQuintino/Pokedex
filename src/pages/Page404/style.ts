@@ -14,10 +14,11 @@ export const Container = styled.div`
   button {
     background: ${({ theme }) => theme.colors.danger};
     color: ${({ theme }) => theme.colors.light};
-    font-weight: 700;
-    font-size: 1.2rem;
-    padding: 1.2rem;
+    box-shadow: 1px 1px 1px #0004;
     border-radius: 3.2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 1.2rem;
     width: 20%;
     margin: 1.6rem auto 0;
 
