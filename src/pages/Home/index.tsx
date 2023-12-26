@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { PokemonCard } from "../../components/PokemonCard";
 import { Link } from "react-router-dom";
-import { useQueryPokemon } from "../../hooks/useQueryPokemon";
+import { useQueryPokemonPage } from "../../hooks/useQueryPokemonPage";
 import { Container } from "./style";
 
 export function Home() {
   const [offset, setOffset] = useState(0);
   const [limit] = useState(30);
   const [totalPages, setTotalPages] = useState(0);
-  const { data, isLoading, error } = useQueryPokemon({ limit, offset });
+  const { data, isLoading, error } = useQueryPokemonPage({ limit, offset });
 
   const currentPage = Math.ceil((offset + 1) / limit);
 

@@ -2,10 +2,12 @@ import { Pokemon } from "../../@types/pokemon";
 import { CardType } from "../CardType";
 import { Container } from "./style";
 import pokeball from "../../assets/pokeball.png";
+import { useEffect } from "react";
 
 type Props = { pokemon: Pokemon };
 
 export function PokemonCardDetails({ pokemon }: Props) {
+  useEffect(() => {}, []);
   return (
     <Container>
       <div className="pokemonImage">
