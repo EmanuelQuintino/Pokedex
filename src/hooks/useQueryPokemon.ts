@@ -8,17 +8,21 @@ type PokemonAPI = {
 };
 
 async function getPokemon({ limit = 30, offset = 0 }) {
-  const { data } = await API.get(`/pokemon?limit=${limit}&offset=${offset}`);
-  const totalPokemon = data.count;
+  try {
+    const { data } = await API.get(`/pokemon?limit=${limit}&offset=${offset}`);
+    const totalPokemon = data.count;
 
-  // const pokemonPromiseList = data.results.map(async (pokemon: { url: string }) => {
-  //   const response = await fetch(pokemon.url);
-  //   const data = await response.json();
-  //   return data;
-  // });
-  // const pokemonDataList = await Promise.all(pokemonPromiseList);
-  const pokemonDataList = data.results;
-  return { pokemonDataList, totalPokemon } as PokemonAPI;
+    // const pokemonPromiseList = data.results.map(async (pokemon: { url: string }) => {
+    //   const response = await fetch(pokemon.url);
+    //   const data = await response.json();
+    //   return data;
+    // });
+    // const pokemonDataList = await Promise.all(pokemonPromiseList);
+    const pokemonDataList = data.results;
+    return { pokemonDataList, totalPokemon } as PokemonAPI;
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 export function useQueryPokemon({ limit, offset } = { limit: 30, offset: 0 }) {

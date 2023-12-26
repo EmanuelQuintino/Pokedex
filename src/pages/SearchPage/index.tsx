@@ -10,7 +10,7 @@ export function SearchPage() {
   const { allPokemon } = useContext(PokemonContext);
 
   const filteredPokemon = allPokemon?.filter((pokemon) => {
-    if (query) return pokemon.name.includes(query);
+    if (query) return pokemon.name.includes(query.toLowerCase());
   });
 
   return (
