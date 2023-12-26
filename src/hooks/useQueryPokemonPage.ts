@@ -44,6 +44,14 @@ export function useQueryPokemonPage() {
     navigate(`?page=${page - 1}`);
   }
 
+  function goHomePage1() {
+    navigate("?page=1");
+    setPage(1);
+    console.log("goHome");
+  }
+
+  console.log(page);
+
   const query = useQuery({
     queryKey: ["getPokemon", page, limit],
     queryFn: () => getPokemonPage({ page, limit }),
@@ -52,6 +60,7 @@ export function useQueryPokemonPage() {
   return {
     ...query,
     page,
+    goHomePage1,
     nextPage,
     prevPage,
     setLimite,

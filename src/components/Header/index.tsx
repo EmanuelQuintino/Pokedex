@@ -2,12 +2,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { Container } from "./style";
 import { SubmitHandler, useForm } from "react-hook-form";
 import pokemonLogo from "../../assets/pokemon-logo.png";
+import { useQueryPokemonPage } from "../../hooks/useQueryPokemonPage";
 
 type Inputs = {
   inputSearch: string;
 };
 
 export function Header() {
+  const { goHomePage1 } = useQueryPokemonPage();
   const navigate = useNavigate();
 
   const {
@@ -21,10 +23,11 @@ export function Header() {
     navigate(`/search?q=${data.inputSearch}`);
     reset();
   };
+
   return (
     <Container>
-      <Link to={"/"}>
-        <img src={pokemonLogo} alt="pokemon logo" />
+      <Link to={"/?page=1"} onClick={goHomePage1}>
+        <img src={pokemonLogo} alt="pokemon logo" onClick={goHomePage1} />
       </Link>
 
       <form onSubmit={handleSubmit(onSubmit)}>

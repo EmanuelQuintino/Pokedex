@@ -11,7 +11,7 @@ export function Home() {
   if (error) console.error(error);
 
   useEffect(() => {
-    if (data) if (data.totalPages != totalPages) setTotalPages(data.totalPages);
+    if (data && data.totalPages != totalPages) setTotalPages(data.totalPages);
   }, [data, totalPages]);
 
   return (
