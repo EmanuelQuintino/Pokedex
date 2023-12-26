@@ -1,24 +1,36 @@
 import { useEffect, useState } from "react";
 import { PokemonCard } from "../../components/PokemonCard";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useQueryPokemonPage } from "../../hooks/useQueryPokemonPage";
 import { Container } from "./style";
 
 export function Home() {
-  const [offset, setOffset] = useState(0);
+  const [page, setPage] = useState(1);
   const [limit] = useState(30);
-  const [totalPages, setTotalPages] = useState(0);
-  const { data, isLoading, error } = useQueryPokemonPage({ limit, offset });
+  const [totalPages, setTotalPages] = useState(1);
 
-  const currentPage = Math.ceil((offset + 1) / limit);
+  const searchParams = useSearchParams();
+  const pageQuery = searchParams[0].get("page");
+
+  const { data, isLoading, error } = useQueryPokemonPage({ page, limit });
+
+  const navigate = useNavigate();
 
   function nextPage() {
-    setOffset((prevOffset) => prevOffset + limit);
+    setPage((prevPage) => prevPage + 1);
+    navigate(`?page=${page + 1}`);
   }
 
   function prevPage() {
-    setOffset((prevOffset) => prevOffset - limit);
+    setPage((prevPage) => prevPage - 1);
+    navigate(`?page=${page - 1}`);
   }
+
+  useEffect(() => {
+    if (Number(pageQuery) >= totalPages) return setPage(totalPages);
+    if (Number(pageQuery) <= 1) return setPage(1);
+    setPage(Number(pageQuery));
+  }, [pageQuery, totalPages]);
 
   useEffect(() => {
     if (data) {
@@ -46,16 +58,15 @@ export function Home() {
       </div>
 
       <div className="paginationComponent">
-        <button onClick={prevPage} disabled={currentPage <= 1}>
+        <button onClick={prevPage} disabled={page <= 1}>
           &lt; Anterior
         </button>
 
         <span className="numberPage">
-          {String(currentPage).padStart(2, "0")} /{" "}
-          {String(totalPages || "...").padStart(2, "0")}
+          {String(page).padStart(2, "0")} / {String(totalPages || "...").padStart(2, "0")}
         </span>
 
-        <button onClick={nextPage} disabled={currentPage >= totalPages}>
+        <button onClick={nextPage} disabled={page >= totalPages}>
           Próxima &gt;
         </button>
       </div>

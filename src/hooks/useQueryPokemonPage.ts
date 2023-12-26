@@ -7,7 +7,8 @@ type PokemonAPI = {
   totalPokemon: number;
 };
 
-async function getPokemonPage({ limit = 30, offset = 0 }) {
+async function getPokemonPage({ page = 1, limit = 30 }) {
+  const offset = (page - 1) * limit;
   const { data } = await API.get(`/pokemon?limit=${limit}&offset=${offset}`);
   const totalPokemon = data.count;
 
@@ -17,14 +18,15 @@ async function getPokemonPage({ limit = 30, offset = 0 }) {
   //   return data;
   // });
   // const pokemonDataList = await Promise.all(pokemonPromiseList);
+  
   const pokemonDataList = data.results;
   return { pokemonDataList, totalPokemon } as PokemonAPI;
 }
 
-export function useQueryPokemonPage({ limit, offset } = { limit: 30, offset: 0 }) {
+export function useQueryPokemonPage({ page, limit } = { page: 1, limit: 30 }) {
   const query = useQuery({
-    queryKey: ["getPokemon", limit, offset],
-    queryFn: () => getPokemonPage({ limit, offset }),
+    queryKey: ["getPokemon", page, limit],
+    queryFn: () => getPokemonPage({ page, limit }),
     // keepPreviousData : true
   });
 
