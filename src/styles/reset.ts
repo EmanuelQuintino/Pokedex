@@ -60,14 +60,4 @@ export const GlobalStyles = createGlobalStyle`
     display: grid;
     place-content: center;
   }
-
-  @media (min-width: 640px) {
-    .inputError {
-      font-size: 1.2rem;
-    }
-    
-    .feedbackLoading {
-      margin: 15% auto;
-    }
-  }
 `;
