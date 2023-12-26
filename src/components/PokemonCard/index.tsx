@@ -1,6 +1,6 @@
 import { CardType } from "../CardType";
 import { Container } from "./style";
-import { useQueryPokemonID } from "../../hooks/useQueryPokemonID";
+import { useQueryPokemonName } from "../../hooks/useQueryPokemonID";
 import { PokemonBasicData } from "../../contexts/PokemonContext";
 import pokeball from "../../assets/pokeball.png";
 
@@ -9,8 +9,7 @@ type PropsAPI = {
 };
 
 export function PokemonCard({ pokemon }: PropsAPI) {
-  const pokemonID = pokemon.url.split("/")[6];
-  const { data } = useQueryPokemonID(pokemonID);
+  const { data } = useQueryPokemonName(pokemon.name);
 
   return (
     <>
