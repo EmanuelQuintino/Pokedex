@@ -12,9 +12,10 @@ export function Home() {
   const [limit] = useState(30);
   const [totalPages, setTotalPages] = useState(1);
 
-  const { data, isLoading, error } = useQueryPokemonPage({ page, limit });
-
   const navigate = useNavigate();
+
+  const { data, isLoading, error } = useQueryPokemonPage({ page, limit });
+  if (error) console.error(error);
 
   function nextPage() {
     setPage((prevPage) => prevPage + 1);
@@ -27,19 +28,11 @@ export function Home() {
   }
 
   useEffect(() => {
-    if (Number(pageQuery) >= totalPages) return setPage(totalPages);
-    if (Number(pageQuery) <= 1) return setPage(1);
-    setPage(Number(pageQuery));
-  }, [pageQuery, totalPages]);
-
-  useEffect(() => {
     if (data) {
       const newTotalPages = Math.ceil(data.totalPokemon / limit);
       if (newTotalPages !== totalPages) setTotalPages(newTotalPages);
     }
   }, [data, limit, totalPages]);
-
-  if (error) console.error(error);
 
   return (
     <Container>
