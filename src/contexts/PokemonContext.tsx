@@ -16,25 +16,25 @@ export function PokemonProvider({ children }: PropsWithChildren) {
   const [allPokemon, setAllPokemon] = useState<PokemonBasicData[]>([]);
 
   async function getAllPokemon() {
-    try {
-      const { data } = await API.get(`/pokemon?limit=100000&offset=0`);
+    const { data } = await API.get(`/pokemon?limit=100000&offset=0`);
 
-      // const pokemonPromiseList = data.results.map(async (pokemon: { url: string }) => {
-      //   const response = await fetch(pokemon.url);
-      //   const data = await response.json();
-      //   return data;
-      // });
+    // const pokemonPromiseList = data.results.map(async (pokemon: { url: string }) => {
+    //   const response = await fetch(pokemon.url);
+    //   const data = await response.json();
+    //   return data;
+    // });
 
-      // const allPokemonDataList = await Promise.all(pokemonPromiseList);
+    // const allPokemonDataList = await Promise.all(pokemonPromiseList);
 
-      setAllPokemon([...data.results]);
-    } catch (error) {
-      console.error();
-    }
+    setAllPokemon([...data.results]);
   }
 
   useEffect(() => {
-    getAllPokemon();
+    try {
+      getAllPokemon();
+    } catch (error) {
+      console.error(error);
+    }
   }, []);
 
   return (
