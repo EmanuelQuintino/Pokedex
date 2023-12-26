@@ -5,12 +5,12 @@ import { useQueryPokemonPage } from "../../hooks/useQueryPokemonPage";
 import { Container } from "./style";
 
 export function Home() {
-  const [page, setPage] = useState(1);
-  const [limit] = useState(30);
-  const [totalPages, setTotalPages] = useState(1);
-
   const searchParams = useSearchParams();
   const pageQuery = searchParams[0].get("page");
+
+  const [page, setPage] = useState(Number(pageQuery) || 1);
+  const [limit] = useState(30);
+  const [totalPages, setTotalPages] = useState(1);
 
   const { data, isLoading, error } = useQueryPokemonPage({ page, limit });
 
