@@ -18,7 +18,7 @@ async function getPokemonPage({ page = 1, limit = 30 }) {
   //   return data;
   // });
   // const pokemonDataList = await Promise.all(pokemonPromiseList);
-  
+
   const pokemonDataList = data.results;
   return { pokemonDataList, totalPokemon } as PokemonAPI;
 }
