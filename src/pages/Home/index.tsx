@@ -1,38 +1,18 @@
-import { useEffect, useState } from "react";
 import { PokemonCard } from "../../components/PokemonCard";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useQueryPokemonPage } from "../../hooks/useQueryPokemonPage";
 import { Container } from "./style";
+import { useEffect, useState } from "react";
 
 export function Home() {
-  const searchParams = useSearchParams();
-  const pageQuery = searchParams[0].get("page");
-
-  const [page, setPage] = useState(Number(pageQuery) || 1);
-  const [limit] = useState(30);
+  const { data, isLoading, error, prevPage, nextPage, page } = useQueryPokemonPage();
   const [totalPages, setTotalPages] = useState(1);
 
-  const navigate = useNavigate();
-
-  const { data, isLoading, error } = useQueryPokemonPage({ page, limit });
   if (error) console.error(error);
 
-  function nextPage() {
-    setPage((prevPage) => prevPage + 1);
-    navigate(`?page=${page + 1}`);
-  }
-
-  function prevPage() {
-    setPage((prevPage) => prevPage - 1);
-    navigate(`?page=${page - 1}`);
-  }
-
   useEffect(() => {
-    if (data) {
-      const newTotalPages = Math.ceil(data.totalPokemon / limit);
-      if (newTotalPages !== totalPages) setTotalPages(newTotalPages);
-    }
-  }, [data, limit, totalPages]);
+    if (data) if (data.totalPages != totalPages) setTotalPages(data.totalPages);
+  }, [data, totalPages]);
 
   return (
     <Container>
