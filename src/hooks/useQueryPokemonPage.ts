@@ -2,37 +2,30 @@ import { useQuery } from "@tanstack/react-query";
 import { API } from "../services/api";
 import { PokemonBasicData } from "../contexts/PokemonContext";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type PokemonPage = {
   pokemonDataList: PokemonBasicData[];
-  totalPokemon: number;
-  totalPages: number;
 };
 
-async function getPokemonPage({ page = 1, limit = 30 }) {
-  const offset = (page - 1) * limit;
-  const { data } = await API.get(`/pokemon?limit=${limit}&offset=${offset}`);
-
-  const totalPokemon = data.count;
-  const totalPages = Math.ceil(totalPokemon / limit);
-  const pokemonDataList = data.results;
-
-  return {
-    pokemonDataList,
-    totalPokemon,
-    totalPages,
-  } as PokemonPage;
-}
-
 export function useQueryPokemonPage() {
-  const searchParams = useSearchParams();
-  const pageQuery = searchParams[0].get("page");
-
-  const [page, setPage] = useState(Number(pageQuery) || 1);
+  const [page, setPage] = useState(1);
   const [limit, setLimite] = useState(30);
+  const [totalPages, setTotalPages] = useState(1);
 
+  const searchParams = useSearchParams();
   const navigate = useNavigate();
+
+  async function getPokemonPage({ page = 1, limit = 30 }) {
+    const offset = (page - 1) * limit;
+    const { data } = await API.get(`/pokemon?limit=${limit}&offset=${offset}`);
+
+    const totalPokemon = data.count;
+    const pokemonDataList = data.results;
+    setTotalPages(Math.ceil(totalPokemon / limit));
+
+    return { pokemonDataList } as PokemonPage;
+  }
 
   function nextPage() {
     setPage((prevPage) => prevPage + 1);
@@ -44,13 +37,10 @@ export function useQueryPokemonPage() {
     navigate(`?page=${page - 1}`);
   }
 
-  function goHomePage1() {
-    navigate("?page=1");
-    setPage(1);
-    console.log("goHome");
-  }
-
-  console.log(page);
+  useEffect(() => {
+    const pageQuery = Number(searchParams[0].get("page"));
+    setPage(pageQuery || 1);
+  }, [searchParams]);
 
   const query = useQuery({
     queryKey: ["getPokemon", page, limit],
@@ -60,7 +50,7 @@ export function useQueryPokemonPage() {
   return {
     ...query,
     page,
-    goHomePage1,
+    totalPages,
     nextPage,
     prevPage,
     setLimite,

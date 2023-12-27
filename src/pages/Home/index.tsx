@@ -2,17 +2,12 @@ import { PokemonCard } from "../../components/PokemonCard";
 import { Link } from "react-router-dom";
 import { useQueryPokemonPage } from "../../hooks/useQueryPokemonPage";
 import { Container } from "./style";
-import { useEffect, useState } from "react";
 
 export function Home() {
-  const { data, isLoading, error, prevPage, nextPage, page } = useQueryPokemonPage();
-  const [totalPages, setTotalPages] = useState(1);
+  const { data, isLoading, error, prevPage, nextPage, page, totalPages } =
+    useQueryPokemonPage();
 
   if (error) console.error(error);
-
-  useEffect(() => {
-    if (data && data.totalPages != totalPages) setTotalPages(data.totalPages);
-  }, [data, totalPages]);
 
   return (
     <Container>
