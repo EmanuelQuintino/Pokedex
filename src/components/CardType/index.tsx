@@ -6,7 +6,7 @@ export type TypeProps = {
   size?: number;
 };
 
-export function CardType({ type, size = 12 }: TypeProps) {
+export function CardType({ type, size = 8 }: TypeProps) {
   return (
     <Container type={type} size={size}>
       {type}

@@ -7,11 +7,12 @@ export const Container = styled.div`
     font-size: 2rem;
     text-align: center;
     color: lightgray;
+    margin-top: 0.8rem;
   }
 
   .gridCards {
     min-height: 100vh;
-    margin-top: 3.2rem;
+    margin-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
