@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.colors.light};
+  min-width: 10rem;
+  min-height: 12rem;
   padding: 1.2rem 0.8rem;
   border-radius: 0.8rem;
   box-shadow: 1px 1px 2px 1px #0002;
@@ -10,7 +12,6 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   transition: scale 100ms;
-  min-width: 10rem;
 
   &:hover {
     scale: 1.05;
@@ -35,6 +36,8 @@ export const Container = styled.div`
 
   @media (min-width: 786px) {
     padding: 2.4rem;
+    min-width: 24rem;
+    min-height: 28rem;
 
     img {
       width: 16rem;
