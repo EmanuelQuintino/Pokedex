@@ -13,7 +13,7 @@ export const Container = styled.header`
 
   img {
     filter: drop-shadow(1px 1px 1px #000b);
-    width: 16rem;
+    width: 14rem;
   }
 
   form {
