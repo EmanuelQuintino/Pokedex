@@ -19,7 +19,6 @@ export const Container = styled.header`
   }
 
   @media (min-width: 786px) {
-    margin-top: 2.4rem;
     padding: 2.4rem 3.2rem;
 
     a {

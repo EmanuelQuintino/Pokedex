@@ -11,7 +11,7 @@ export const Container = styled.div`
   flex-direction: column;
 
   .pokemonImage {
-    width: 12rem;
+    width: 16rem;
     border-radius: 100%;
     background: #ddd8;
     box-shadow: 1px 1px 2px 1px #0002;
@@ -29,7 +29,7 @@ export const Container = styled.div`
   }
 
   strong {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .sizePokemon {
@@ -40,7 +40,7 @@ export const Container = styled.div`
     gap: 2.4rem;
 
     span {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       color: gray;
     }
   }
@@ -50,7 +50,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
-    margin-top: 1.2rem;
+    margin-top: 1.4rem;
   }
 
   .boxStats {
@@ -139,7 +139,7 @@ export const Container = styled.div`
 
     .statsValue {
       font-size: 1.6rem;
-      width: 2.8rem;
+      width: 3.2rem;
     }
   }
 `;

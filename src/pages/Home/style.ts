@@ -21,7 +21,7 @@ export const Container = styled.div`
   }
 
   .paginationComponent {
-    width: 24rem;
+    width: 21rem;
     margin: 1.4rem auto 0;
     padding: 0.6rem 1.2rem;
     display: flex;
@@ -29,16 +29,16 @@ export const Container = styled.div`
     justify-content: space-between;
 
     .numberPage {
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 700;
     }
 
     button {
       background: ${({ theme }) => theme.colors.danger};
       color: ${({ theme }) => theme.colors.light};
-      font-size: 1rem;
+      font-size: 0.8rem;
       font-weight: 700;
-      padding: 0.8rem 1.6rem;
+      padding: 0.6rem 1.2rem;
       border-radius: 0.8rem;
       box-shadow: 1px 1px 2px 0px #0008;
       text-shadow: 1px 1px 2px #0004;
