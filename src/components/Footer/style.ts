@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.header`
   background: ${({ theme }) => theme.colors.primary};
-  margin-top: 1.2rem;
   padding: 2.4rem 3.2rem;
   width: 100%;
   text-align: center;

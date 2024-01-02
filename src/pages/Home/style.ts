@@ -22,7 +22,7 @@ export const Container = styled.div`
 
   .paginationComponent {
     width: 24rem;
-    margin: 2.4rem auto 0;
+    margin: 1.4rem auto 0;
     padding: 0.6rem 1.2rem;
     display: flex;
     align-items: center;
