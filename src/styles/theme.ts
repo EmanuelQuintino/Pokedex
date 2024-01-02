@@ -2,12 +2,9 @@ export const appTheme = {
   colors: {
     light: "#f2f2f2",
     dark: "#262626",
-    primary: "#0477BF",
-    primary500: "#030A8C",
-    primaryHover: "#048ABF",
-    secondary: "#023E73",
+    primary: "#037F8C",
+    secondary: "#71A621",
     complementary: "#F2B705",
-    complementary500: "#D98E04",
     danger: "#F20732",
     types: {
       fire: "#ff7402",
