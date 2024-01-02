@@ -121,6 +121,8 @@ export const Container = styled.div`
     }
 
     .sizePokemon {
+      justify-content: start;
+
       span {
         font-size: 1.6rem;
       }
