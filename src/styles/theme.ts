@@ -3,7 +3,7 @@ export const appTheme = {
     light: "#f2f2f2",
     dark: "#262626",
     primary: "#037F8C",
-    secondary: "#71A621",
+    secondary: "#0477BF",
     complementary: "#F2B705",
     danger: "#F20732",
     types: {
