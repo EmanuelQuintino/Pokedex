@@ -112,6 +112,10 @@ export const Container = styled.div`
       width: 100%;
     }
 
+    .boxStatus {
+      text-align: left;
+    }
+
     strong {
       font-size: 3.2rem;
     }
@@ -125,7 +129,11 @@ export const Container = styled.div`
     .boxTypes {
       justify-content: start;
       gap: 1.6rem;
-      margin-top: 1.6rem;
+      margin-top: 2.4rem;
+    }
+
+    .stats {
+      margin-top: 0.2rem;
     }
 
     .statsName {
