@@ -6,13 +6,14 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
   padding: 2.4rem 3.2rem;
   box-shadow: 0px 0px 1px 1px #0004;
   width: 100%;
 
   img {
     filter: drop-shadow(1px 1px 1px #000b);
-    width: 20rem;
+    width: 16rem;
   }
 
   form {
@@ -20,15 +21,18 @@ export const Container = styled.header`
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
+    margin-top: 0.8rem;
   }
 
   input {
+    font-size: 1.2rem;
     border-radius: 0.8rem;
     padding: 0.8rem 1.6rem;
     box-shadow: 1px 1px 2px 0px #0008;
   }
 
   button {
+    font-size: 1.2rem;
     border-radius: 0.8rem;
     padding: 0.8rem 1.6rem;
     font-weight: 700;
@@ -40,5 +44,21 @@ export const Container = styled.header`
   button:hover {
     cursor: pointer;
     filter: brightness(1.05);
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+
+    img {
+      width: 20rem;
+    }
+
+    input {
+      font-size: 1.6rem;
+    }
+
+    button {
+      font-size: 1.6rem;
+    }
   }
 `;
