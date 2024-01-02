@@ -8,12 +8,14 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  flex-direction: column;
 
   .pokemonImage {
-    width: 32rem;
+    width: 12rem;
     border-radius: 100%;
     background: #ddd8;
     box-shadow: 1px 1px 2px 1px #0002;
+    margin-top: 1.6rem;
   }
 
   .pokemonImage img {
@@ -21,28 +23,38 @@ export const Container = styled.div`
     width: 100%;
   }
 
+  .boxStatus {
+    text-align: center;
+    margin-top: 2.4rem;
+  }
+
   strong {
-    font-size: 2.8rem;
+    font-size: 1.6rem;
   }
 
   .sizePokemon {
-    display: flex;
-    gap: 2.4rem;
     margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem;
 
     span {
+      font-size: 1.2rem;
       color: gray;
     }
   }
 
   .boxTypes {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 0.8rem;
-    margin-top: 1.6rem;
+    margin-top: 1.2rem;
   }
 
   .boxStats {
-    margin-top: 1.6rem;
+    margin-top: 2.4rem;
   }
 
   .stats {
@@ -52,13 +64,13 @@ export const Container = styled.div`
   }
 
   .statsName {
-    font-size: 1.6rem;
-    width: 13rem;
+    font-size: 1.2rem;
+    width: 10rem;
     margin-left: auto;
   }
 
   progress {
-    height: 1rem;
+    height: 0.4rem;
 
     &::-webkit-progress-value {
       background: ${({ theme }) => theme.colors.primary};
@@ -82,8 +94,52 @@ export const Container = styled.div`
   }
 
   .statsValue {
-    font-size: 1.6rem;
-    width: 4.2rem;
+    font-size: 1.2rem;
+    width: 2.4rem;
     text-align: right;
+  }
+
+  @media (min-width: 786px) {
+    flex-direction: row;
+
+    .pokemonImage {
+      width: 28rem;
+      margin-top: 2.4rem;
+    }
+
+    .pokemonImage img {
+      filter: drop-shadow(1px 1px 1px #000b);
+      width: 100%;
+    }
+
+    strong {
+      font-size: 3.2rem;
+    }
+
+    .sizePokemon {
+      span {
+        font-size: 1.6rem;
+      }
+    }
+
+    .boxTypes {
+      justify-content: start;
+      gap: 1.6rem;
+      margin-top: 1.6rem;
+    }
+
+    .statsName {
+      font-size: 1.6rem;
+      width: 12rem;
+    }
+
+    progress {
+      height: 0.8rem;
+    }
+
+    .statsValue {
+      font-size: 1.6rem;
+      width: 2.8rem;
+    }
   }
 `;
