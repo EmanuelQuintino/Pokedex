@@ -29,7 +29,7 @@ export function PokemonCardDetails({ pokemon }: Props) {
 
         <div className="boxTypes">
           {pokemon.types.map((type) => {
-            return <CardType key={type.type.name} type={type.type.name} size={14} />;
+            return <CardType key={type.type.name} type={type.type.name} size={16} />;
           })}
         </div>
       </div>

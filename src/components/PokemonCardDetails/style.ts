@@ -11,7 +11,7 @@ export const Container = styled.div`
   flex-direction: column;
 
   .pokemonImage {
-    width: 16rem;
+    width: 18rem;
     border-radius: 100%;
     background: #ddd8;
     box-shadow: 1px 1px 2px 1px #0002;
@@ -29,7 +29,7 @@ export const Container = styled.div`
   }
 
   strong {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .sizePokemon {
@@ -40,7 +40,7 @@ export const Container = styled.div`
     gap: 2.4rem;
 
     span {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       color: gray;
     }
   }
@@ -64,13 +64,13 @@ export const Container = styled.div`
   }
 
   .statsName {
-    font-size: 1.2rem;
-    width: 10rem;
+    font-size: 1.4rem;
+    width: 11rem;
     margin-left: auto;
   }
 
   progress {
-    height: 0.4rem;
+    height: 0.6rem;
 
     &::-webkit-progress-value {
       background: ${({ theme }) => theme.colors.primary};
@@ -94,8 +94,8 @@ export const Container = styled.div`
   }
 
   .statsValue {
-    font-size: 1.2rem;
-    width: 2.4rem;
+    font-size: 1.4rem;
+    width: 2.8rem;
     text-align: right;
   }
 
@@ -124,7 +124,7 @@ export const Container = styled.div`
       justify-content: start;
 
       span {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
     }
 
@@ -139,8 +139,8 @@ export const Container = styled.div`
     }
 
     .statsName {
-      font-size: 1.6rem;
-      width: 12rem;
+      font-size: 1.8rem;
+      width: 14rem;
     }
 
     progress {
@@ -148,8 +148,8 @@ export const Container = styled.div`
     }
 
     .statsValue {
-      font-size: 1.6rem;
-      width: 3.2rem;
+      font-size: 1.8rem;
+      width: 3.6rem;
     }
   }
 `;

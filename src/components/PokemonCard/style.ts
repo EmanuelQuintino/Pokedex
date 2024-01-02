@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.colors.light};
-  min-width: 10rem;
-  min-height: 12rem;
+  min-width: 12rem;
+  min-height: 16rem;
   padding: 1.2rem 0.8rem;
   border-radius: 0.8rem;
   box-shadow: 1px 1px 2px 1px #0002;
@@ -19,7 +19,7 @@ export const Container = styled.div`
 
   img {
     filter: drop-shadow(1px 1px 1px #000b);
-    width: 5.6rem;
+    width: 8rem;
   }
 
   strong {
