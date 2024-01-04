@@ -4,7 +4,7 @@ import { AppRoutes } from "./routes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider } from "styled-components";
 import { appTheme } from "./styles/theme";
-import { GlobalStyles } from "./styles/reset";
+import { GlobalStyles } from "./styles/global";
 import { PokemonProvider } from "./contexts/PokemonContext";
 
 const queryClient = new QueryClient();
