@@ -1,5 +1,5 @@
 import { PropsWithChildren, createContext, useEffect, useState } from "react";
-import { API } from "../services/api";
+import { API } from "../configs/api";
 
 export type PokemonBasicData = {
   name: string;

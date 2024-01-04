@@ -10,7 +10,6 @@ type PropsAPI = {
 
 export function PokemonCard({ pokemon }: PropsAPI) {
   const { data } = useQueryPokemon(pokemon.name);
-
   return (
     <>
       {data && (

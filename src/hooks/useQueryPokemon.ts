@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { API } from "../services/api";
+import { API } from "../configs/api";
 import { Pokemon } from "../@types/pokemon";
 
 async function getPokemon(name: string) {

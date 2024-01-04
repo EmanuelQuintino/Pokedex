@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { API } from "../services/api";
+import { API } from "../configs/api";
 import { PokemonBasicData } from "../contexts/PokemonContext";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
