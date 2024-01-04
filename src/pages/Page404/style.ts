@@ -6,7 +6,7 @@ export const Container = styled.div`
   height: 100vh;
 
   img {
-    margin-top: 4.8rem;
+    margin-top: 2.4rem;
     width: 28rem;
     box-shadow: 1px 1px 2px 1px #0002;
   }
@@ -30,6 +30,7 @@ export const Container = styled.div`
 
   @media (min-width: 786px) {
     img {
+      margin-top: 4.8rem;
       width: 56rem;
     }
 
