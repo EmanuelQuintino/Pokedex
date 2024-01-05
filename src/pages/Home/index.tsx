@@ -7,6 +7,10 @@ export function Home() {
   const { data, isLoading, error, prevPage, nextPage, page, totalPages } =
     useQueryPokemonPage();
 
+  const windowScrollToTop = () => {
+    window.scrollTo({ top: 0 });
+  };
+
   if (error) console.error(error);
 
   return (
@@ -18,7 +22,11 @@ export function Home() {
       <div className="gridCards">
         {data?.map((pokemon) => {
           return (
-            <Link to={`/details/${pokemon.name}`} key={pokemon.id}>
+            <Link
+              to={`/details/${pokemon.name}`}
+              key={pokemon.id}
+              onClick={windowScrollToTop}
+            >
               <PokemonCard pokemon={pokemon} />
             </Link>
           );
@@ -26,7 +34,13 @@ export function Home() {
       </div>
 
       <div className="paginationComponent">
-        <button onClick={prevPage} disabled={page <= 1}>
+        <button
+          onClick={() => {
+            prevPage();
+            windowScrollToTop();
+          }}
+          disabled={page <= 1}
+        >
           &lt; Anterior
         </button>
 
@@ -34,7 +48,13 @@ export function Home() {
           {String(page).padStart(2, "0")} / {String(totalPages || "...").padStart(2, "0")}
         </span>
 
-        <button onClick={nextPage} disabled={page >= totalPages}>
+        <button
+          onClick={() => {
+            nextPage();
+            windowScrollToTop();
+          }}
+          disabled={page >= totalPages}
+        >
           Próxima &gt;
         </button>
       </div>
