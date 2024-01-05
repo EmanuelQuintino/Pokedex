@@ -1,12 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { API } from "../configs/api";
-import { PokemonBasicData } from "../contexts/PokemonContext";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-
-type PokemonPage = {
-  pokemonDataList: PokemonBasicData[];
-};
+import { Pokemon } from "../@types/pokemon";
 
 export function useQueryPokemonPage() {
   const [page, setPage] = useState(1);
@@ -20,13 +16,20 @@ export function useQueryPokemonPage() {
     const offset = (page - 1) * limit;
     const { data } = await API.get(`/pokemon?limit=${limit}&offset=${offset}`);
 
+    const pokemonPromiseList = data.results.map(async (pokemon: { url: string }) => {
+      const response = await fetch(pokemon.url);
+      const data = await response.json();
+      return data;
+    });
+
+    const pokemonDataList = await Promise.all(pokemonPromiseList);
+
     const totalPokemon = data.count;
     const totalPagesAPI = Math.ceil(totalPokemon / limit);
 
     if (totalPages != totalPagesAPI) setTotalPages(totalPagesAPI);
 
-    const pokemonDataList = data.results;
-    return { pokemonDataList } as PokemonPage;
+    return pokemonDataList as Pokemon[];
   }
 
   function nextPage() {
@@ -47,7 +50,7 @@ export function useQueryPokemonPage() {
   }, [searchParams, totalPages]);
 
   const query = useQuery({
-    queryKey: ["getPokemon", page, limit],
+    queryKey: ["getPokemonPage", page, limit],
     queryFn: () => getPokemonPage({ page, limit }),
   });
 

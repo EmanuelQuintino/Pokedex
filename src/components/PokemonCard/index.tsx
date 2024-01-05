@@ -1,35 +1,31 @@
 import { CardType } from "../CardType";
 import { Container } from "./style";
-import { useQueryPokemon } from "../../hooks/useQueryPokemon";
-import { PokemonBasicData } from "../../contexts/PokemonContext";
 import pokeball from "../../assets/pokeball.png";
+import { Pokemon } from "../../@types/pokemon";
 
-type PropsAPI = {
-  pokemon: PokemonBasicData;
+type Props = {
+  pokemon: Pokemon;
 };
 
-export function PokemonCard({ pokemon }: PropsAPI) {
-  const { data } = useQueryPokemon(pokemon.name);
+export function PokemonCard({ pokemon }: Props) {
   return (
     <>
-      {data && (
-        <Container>
-          <img
-            src={data.sprites.other["official-artwork"].front_default || pokeball}
-            alt={data.name}
-          />
+      <Container>
+        <img
+          src={pokemon.sprites.other["official-artwork"].front_default || pokeball}
+          alt={pokemon.name}
+        />
 
-          <strong>
-            #{data.id} {data.name}
-          </strong>
+        <strong>
+          #{pokemon.id} {pokemon.name}
+        </strong>
 
-          <div className="boxTypes">
-            {data.types.map((type) => {
-              return <CardType key={type.type.name} type={type.type.name} />;
-            })}
-          </div>
-        </Container>
-      )}
+        <div className="boxTypes">
+          {pokemon.types.map((type) => {
+            return <CardType key={type.type.name} type={type.type.name} />;
+          })}
+        </div>
+      </Container>
     </>
   );
 }

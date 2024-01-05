@@ -16,9 +16,9 @@ export function Home() {
       {!isLoading && error && <span className="feedbackLoading">Error...</span>}
 
       <div className="gridCards">
-        {data?.pokemonDataList?.map((pokemon) => {
+        {data?.map((pokemon) => {
           return (
-            <Link to={`/details/${pokemon.name}`} key={pokemon.name}>
+            <Link to={`/details/${pokemon.name}`} key={pokemon.id}>
               <PokemonCard pokemon={pokemon} />
             </Link>
           );
