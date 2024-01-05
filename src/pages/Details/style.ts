@@ -19,7 +19,7 @@ export const Container = styled.div`
       top: 12px;
       left: 16px;
 
-      button:hover {
+      &:hover {
         text-decoration: underline;
       }
     }
