@@ -51,7 +51,7 @@ export const GlobalStyles = createGlobalStyle`
     text-shadow: 1px 1px 1px #0008;
   }
 
-  .feedbackLoading {
+  .feedbackQuery {
     width: 100%;
     margin: 15% auto;
     font-weight: 700;

@@ -17,8 +17,8 @@ export function Details() {
 
   return (
     <Container>
-      {isLoading && <span className="feedbackLoading">Loading...</span>}
-      {!isLoading && error && <span className="feedbackLoading">Error...</span>}
+      {isLoading && <span className="feedbackQuery">Loading...</span>}
+      {!isLoading && error && <span className="feedbackQuery">Error...</span>}
 
       {data && (
         <div className="boxDetails">
