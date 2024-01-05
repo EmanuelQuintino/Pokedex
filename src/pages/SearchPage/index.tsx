@@ -1,26 +1,28 @@
 import { PokemonCard } from "../../components/PokemonCard";
 import { Link, useSearchParams } from "react-router-dom";
 import { Container } from "./style";
-import { PokemonContext } from "../../contexts/PokemonContext";
-import { useContext } from "react";
+import { useQueryFilteredPokemon } from "../../hooks/useQueryFilteredPokemon";
 
 export function SearchPage() {
   const searchParams = useSearchParams();
-  const query = searchParams[0].get("q");
-  const { allPokemon } = useContext(PokemonContext);
+  const queryPokemonName = searchParams[0].get("q");
+  const { data, isLoading, error } = useQueryFilteredPokemon(queryPokemonName!);
 
-  const filteredPokemon = allPokemon?.filter((pokemon) => {
-    if (query) return pokemon.name.includes(query.toLowerCase());
-  });
+  if (error) console.error(error);
 
   return (
     <Container>
-      <h1>{`Encontrado ${filteredPokemon.length} resultado(s) para "${query}"`}</h1>
+      {isLoading && <span className="feedbackQuery">Loading...</span>}
+      {!isLoading && error && <span className="feedbackQuery">Error...</span>}
+
+      <h1>{`Encontrado ${
+        data?.length || ""
+      } resultado(s) para "${queryPokemonName}"`}</h1>
 
       <div className="gridCards">
-        {filteredPokemon?.map((pokemon) => {
+        {data?.map((pokemon) => {
           return (
-            <Link to={`/details/${pokemon.name}`} key={pokemon.name}>
+            <Link to={`/details/${pokemon.name}`} key={pokemon.id}>
               <PokemonCard pokemon={pokemon} />
             </Link>
           );

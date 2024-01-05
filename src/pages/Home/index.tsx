@@ -12,8 +12,8 @@ export function Home() {
   return (
     <Container>
       <h1>{"Bem-vindo(a) à Pokédex do Reprograma Jucás"}</h1>
-      {isLoading && <span className="feedbackLoading">Loading...</span>}
-      {!isLoading && error && <span className="feedbackLoading">Error...</span>}
+      {isLoading && <span className="feedbackQuery">Loading...</span>}
+      {!isLoading && error && <span className="feedbackQuery">Error...</span>}
 
       <div className="gridCards">
         {data?.map((pokemon) => {
