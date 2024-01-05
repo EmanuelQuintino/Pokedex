@@ -7,10 +7,6 @@ export function Home() {
   const { data, isLoading, error, prevPage, nextPage, page, totalPages } =
     useQueryPokemonPage();
 
-  const windowScrollToTop = () => {
-    window.scrollTo({ top: 0 });
-  };
-
   if (error) console.error(error);
 
   return (
@@ -25,7 +21,7 @@ export function Home() {
             <Link
               to={`/details/${pokemon.name}`}
               key={pokemon.id}
-              onClick={windowScrollToTop}
+              onClick={() => window.scrollTo({ top: 0 })}
             >
               <PokemonCard pokemon={pokemon} />
             </Link>
@@ -37,7 +33,7 @@ export function Home() {
         <button
           onClick={() => {
             prevPage();
-            windowScrollToTop();
+            window.scrollTo({ top: 0 });
           }}
           disabled={page <= 1}
         >
@@ -51,7 +47,7 @@ export function Home() {
         <button
           onClick={() => {
             nextPage();
-            windowScrollToTop();
+            window.scrollTo({ top: 0 });
           }}
           disabled={page >= totalPages}
         >
