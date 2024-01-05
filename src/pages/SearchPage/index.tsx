@@ -12,12 +12,12 @@ export function SearchPage() {
 
   return (
     <Container>
-      {isLoading && <span className="feedbackQuery">Loading...</span>}
+      {isLoading && <span className="feedbackQuery">Pesquisando...</span>}
       {!isLoading && error && <span className="feedbackQuery">Error...</span>}
 
-      <h1>{`Encontrado ${
-        data?.length || ""
-      } resultado(s) para "${queryPokemonName}"`}</h1>
+      {data && (
+        <h1>{`Encontrado ${data?.length} resultado(s) para "${queryPokemonName}"`}</h1>
+      )}
 
       <div className="gridCards">
         {data?.map((pokemon) => {
