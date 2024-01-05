@@ -22,11 +22,7 @@ export function SearchPage() {
       <div className="gridCards">
         {data?.map((pokemon) => {
           return (
-            <Link
-              to={`/details/${pokemon.name}`}
-              key={pokemon.id}
-              onClick={() => window.scrollTo({ top: 0 })}
-            >
+            <Link to={`/details/${pokemon.name}`} key={pokemon.id}>
               <PokemonCard pokemon={pokemon} />
             </Link>
           );

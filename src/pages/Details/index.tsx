@@ -3,6 +3,7 @@ import { useQueryPokemon } from "../../hooks/useQueryPokemon";
 import { Container } from "./style";
 import { CardType } from "../../components/CardType";
 import pokeball from "../../assets/pokeball.png";
+import { useEffect } from "react";
 
 type Params = {
   name: string;
@@ -14,6 +15,10 @@ export function Details() {
   const navigate = useNavigate();
 
   if (error) console.error(error);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
 
   return (
     <Container>

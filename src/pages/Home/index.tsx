@@ -2,12 +2,17 @@ import { PokemonCard } from "../../components/PokemonCard";
 import { Link } from "react-router-dom";
 import { useQueryPokemonPage } from "../../hooks/useQueryPokemonPage";
 import { Container } from "./style";
+import { useEffect } from "react";
 
 export function Home() {
   const { data, isLoading, error, prevPage, nextPage, page, totalPages } =
     useQueryPokemonPage();
 
   if (error) console.error(error);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [page]);
 
   return (
     <Container>
@@ -18,11 +23,7 @@ export function Home() {
       <div className="gridCards">
         {data?.map((pokemon) => {
           return (
-            <Link
-              to={`/details/${pokemon.name}`}
-              key={pokemon.id}
-              onClick={() => window.scrollTo({ top: 0 })}
-            >
+            <Link to={`/details/${pokemon.name}`} key={pokemon.id}>
               <PokemonCard pokemon={pokemon} />
             </Link>
           );
@@ -30,13 +31,7 @@ export function Home() {
       </div>
 
       <div className="paginationComponent">
-        <button
-          onClick={() => {
-            prevPage();
-            window.scrollTo({ top: 0 });
-          }}
-          disabled={page <= 1}
-        >
+        <button onClick={prevPage} disabled={page <= 1}>
           &lt; Anterior
         </button>
 
@@ -44,13 +39,7 @@ export function Home() {
           {String(page).padStart(2, "0")} / {String(totalPages || "...").padStart(2, "0")}
         </span>
 
-        <button
-          onClick={() => {
-            nextPage();
-            window.scrollTo({ top: 0 });
-          }}
-          disabled={page >= totalPages}
-        >
+        <button onClick={nextPage} disabled={page >= totalPages}>
           Próxima &gt;
         </button>
       </div>
