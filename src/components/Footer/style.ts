@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.header`
+export const Container = styled.footer`
   background: ${({ theme }) => theme.colors.primary};
   padding: 2.4rem 3.2rem;
   width: 100%;

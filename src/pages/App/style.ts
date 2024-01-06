@@ -8,14 +8,13 @@ export const Container = styled.div`
   min-height: 100vh;
 
   main {
+    flex: 1;
     max-width: 150rem;
     margin: 0 auto;
     padding: 1.2rem;
   }
 
   @media (min-width: 786px) {
-    display: block;
-
     main {
       padding: 2.4rem;
     }
