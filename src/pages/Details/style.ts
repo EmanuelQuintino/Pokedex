@@ -16,8 +16,8 @@ export const Container = styled.div`
       font-size: 1.4rem;
       font-weight: 500;
       position: absolute;
-      top: 12px;
-      left: 16px;
+      top: 16px;
+      left: 18px;
 
       &:hover {
         text-decoration: underline;
@@ -29,7 +29,7 @@ export const Container = styled.div`
       border-radius: 100%;
       background: #ddd8;
       box-shadow: 1px 1px 2px 1px #0002;
-      margin-top: 1.6rem;
+      margin-top: 2.4rem;
     }
 
     .pokemonImage img {
@@ -39,7 +39,7 @@ export const Container = styled.div`
 
     .boxStatus {
       text-align: center;
-      margin-top: 3.2rem;
+      margin-top: 2rem;
     }
 
     strong {
@@ -64,11 +64,11 @@ export const Container = styled.div`
       align-items: center;
       justify-content: center;
       gap: 0.8rem;
-      margin-top: 2.4rem;
+      margin-top: 2rem;
     }
 
     .boxStats {
-      margin-top: 3.2rem;
+      margin-top: 2.8rem;
     }
 
     .stats {
