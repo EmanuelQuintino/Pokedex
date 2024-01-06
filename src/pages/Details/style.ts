@@ -25,7 +25,7 @@ export const Container = styled.div`
     }
 
     .pokemonImage {
-      width: 18rem;
+      width: 20rem;
       border-radius: 100%;
       background: #ddd8;
       box-shadow: 1px 1px 2px 1px #0002;
@@ -39,7 +39,7 @@ export const Container = styled.div`
 
     .boxStatus {
       text-align: center;
-      margin-top: 2.4rem;
+      margin-top: 3.2rem;
     }
 
     strong {
@@ -68,7 +68,7 @@ export const Container = styled.div`
     }
 
     .boxStats {
-      margin-top: 2.8rem;
+      margin-top: 3.2rem;
     }
 
     .stats {
@@ -117,7 +117,6 @@ export const Container = styled.div`
   @media (min-width: 786px) {
     .boxDetails {
       flex-direction: row;
-      gap: 2.4rem;
       padding: 2.4rem 4.8rem;
 
       .buttonBackPage {
