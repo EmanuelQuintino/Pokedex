@@ -117,6 +117,8 @@ export const Container = styled.div`
   @media (min-width: 786px) {
     .boxDetails {
       flex-direction: row;
+      gap: 2.4rem;
+      padding: 2.4rem 4.8rem;
 
       .buttonBackPage {
         font-size: 1.6rem;
