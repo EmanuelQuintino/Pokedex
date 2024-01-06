@@ -47,13 +47,13 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 1.2rem;
     display: block;
     position: absolute;
-    margin-top: 0.4rem;
+    margin-top: 0.6rem;
     text-shadow: 1px 1px 1px #0008;
   }
 
-  .feedbackQuery {
+  .loading {
     width: 100%;
-    margin: 15% auto;
+    margin: 25% auto;
     font-weight: 700;
     font-size: 2.0rem;
     color: lightgray;

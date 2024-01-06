@@ -12,8 +12,8 @@ export function SearchPage() {
 
   return (
     <Container>
-      {isLoading && <span className="feedbackQuery">Pesquisando...</span>}
-      {!isLoading && error && <span className="feedbackQuery">Error...</span>}
+      {isLoading && <span className="loading">Pesquisando...</span>}
+      {!isLoading && error && <span className="loading">Error...</span>}
 
       {data && (
         <h1>{`Encontrado ${data?.length} resultado(s) para "${queryPokemonName}"`}</h1>

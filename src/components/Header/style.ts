@@ -7,7 +7,7 @@ export const Container = styled.header`
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  padding: 2.4rem 3.2rem;
+  padding: 2rem 3.2rem 2.8rem;
   box-shadow: 0px 0px 1px 1px #0004;
   width: 100%;
 
@@ -48,6 +48,7 @@ export const Container = styled.header`
 
   @media (min-width: 768px) {
     flex-direction: row;
+    padding: 2.4rem 3.2rem;
 
     img {
       width: 20rem;
