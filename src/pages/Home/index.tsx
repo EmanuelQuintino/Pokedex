@@ -11,7 +11,7 @@ export function Home() {
   if (error) console.error(error);
 
   useEffect(() => {
-    window.scrollTo({ top: 0 });
+    // window.scrollTo({ top: 0 });
   }, [page]);
 
   return (
