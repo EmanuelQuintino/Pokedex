@@ -55,9 +55,15 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
     margin: 25% auto;
     font-weight: 700;
-    font-size: 2.0rem;
+    font-size: 1.6rem;
     color: lightgray;
     display: grid;
     place-content: center;
+  }
+
+  @media (min-width: 786px) {
+    .loading {
+      font-size: 2.0rem;
+    } 
   }
 `;
