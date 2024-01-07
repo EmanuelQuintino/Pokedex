@@ -12,7 +12,7 @@ export function SearchPage() {
 
   return (
     <Container>
-      {isLoading && <span className="loading">Pesquisando...</span>}
+      {isLoading && <span className="loading">Loading...</span>}
       {!isLoading && error && <span className="loading">Error...</span>}
 
       {data && (
