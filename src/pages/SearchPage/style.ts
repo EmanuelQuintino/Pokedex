@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.main`
+  flex: 1;
+
   h1 {
     margin-top: 0.8rem;
     font-size: 1.2rem;
