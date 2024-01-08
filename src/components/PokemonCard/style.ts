@@ -12,9 +12,20 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   transition: scale 100ms;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 
   &:hover {
     scale: 1.05;
+  }
+
+  .backgroundImage {
+    position: absolute;
+    z-index: -1;
+    width: 40rem;
+    opacity: 0.5;
+    filter: blur(100px) brightness(1.5);
   }
 
   img {
@@ -38,6 +49,10 @@ export const Container = styled.div`
     padding: 2.4rem;
     min-width: 22rem;
     min-height: 28rem;
+
+    .backgroundImage {
+      width: 100rem;
+    }
 
     img {
       width: 16rem;
