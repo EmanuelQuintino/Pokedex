@@ -31,6 +31,12 @@ export function Details() {
             &lt; voltar
           </button>
 
+          {/* <img
+            src={data.sprites.other["official-artwork"].front_default || pokeball}
+            alt={data.name}
+            className="backgroundImage"
+          /> */}
+
           <div className="pokemonImage">
             <img
               src={data.sprites.other["official-artwork"].front_default || pokeball}

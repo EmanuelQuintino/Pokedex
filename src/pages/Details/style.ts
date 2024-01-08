@@ -11,6 +11,7 @@ export const Container = styled.main`
     justify-content: space-evenly;
     flex-direction: column;
     position: relative;
+    overflow: hidden;
 
     .buttonBackPage {
       font-size: 1.4rem;
@@ -24,15 +25,25 @@ export const Container = styled.main`
       }
     }
 
+    .backgroundImage {
+      position: absolute;
+      z-index: -1;
+      width: 200rem;
+      opacity: 0.5;
+      filter: blur(200px) brightness(1);
+    }
+
     .pokemonImage {
       width: 20rem;
       border-radius: 100%;
       background: #ddd8;
       box-shadow: 1px 1px 2px 1px #0002;
       margin-top: 2.4rem;
+      position: relative;
+      /* overflow: hidden; */
     }
 
-    .pokemonImage img {
+    .pokemonImage img:nth-child(1) {
       filter: drop-shadow(1px 1px 1px #000b);
       width: 100%;
     }
