@@ -45,7 +45,7 @@ export const Container = styled.div`
     margin-top: 0.8rem;
   }
 
-  @media (min-width: 786px) {
+  @media (min-width: 768px) {
     padding: 2.4rem;
     min-width: 22rem;
     min-height: 28rem;

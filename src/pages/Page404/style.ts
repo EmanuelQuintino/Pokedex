@@ -28,7 +28,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 786px) {
+  @media (min-width: 768px) {
     img {
       margin-top: 4.8rem;
       width: 56rem;

@@ -125,7 +125,7 @@ export const Container = styled.main`
     }
   }
 
-  @media (min-width: 786px) {
+  @media (min-width: 768px) {
     .boxDetails {
       flex-direction: row;
       width: 120rem;

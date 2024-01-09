@@ -61,7 +61,7 @@ export const GlobalStyles = createGlobalStyle`
     place-content: center;
   }
 
-  @media (min-width: 786px) {
+  @media (min-width: 768px) {
     .loading {
       font-size: 2.0rem;
     } 

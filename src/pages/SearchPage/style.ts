@@ -19,7 +19,7 @@ export const Container = styled.main`
     flex-wrap: wrap;
   }
 
-  @media (min-width: 786px) {
+  @media (min-width: 768px) {
     h1 {
       margin-top: 2.4rem;
       font-size: 2.8rem;

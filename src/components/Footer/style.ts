@@ -18,7 +18,7 @@ export const Container = styled.footer`
     text-align: center;
   }
 
-  @media (min-width: 786px) {
+  @media (min-width: 768px) {
     padding: 2.4rem 3.2rem;
 
     a {
