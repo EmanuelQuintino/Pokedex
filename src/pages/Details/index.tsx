@@ -27,15 +27,15 @@ export function Details() {
 
       {data && (
         <div className="boxDetails">
-          <button onClick={() => navigate(-1)} className="buttonBackPage">
-            &lt; voltar
-          </button>
-
           {/* <img
             src={data.sprites.other["official-artwork"].front_default || pokeball}
             alt={data.name}
             className="backgroundImage"
           /> */}
+
+          <button onClick={() => navigate(-1)} className="buttonBackPage">
+            &lt; voltar
+          </button>
 
           <div className="pokemonImage">
             <img

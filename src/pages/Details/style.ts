@@ -13,6 +13,15 @@ export const Container = styled.main`
     position: relative;
     overflow: hidden;
 
+    .backgroundImage {
+      position: absolute;
+      z-index: -1;
+      width: 200rem;
+      opacity: 0.5;
+      transform: rotate(-90deg);
+      filter: blur(300px) brightness(1.2);
+    }
+
     .buttonBackPage {
       font-size: 1.4rem;
       font-weight: 500;
@@ -25,25 +34,15 @@ export const Container = styled.main`
       }
     }
 
-    .backgroundImage {
-      position: absolute;
-      z-index: -1;
-      width: 200rem;
-      opacity: 0.5;
-      filter: blur(200px) brightness(1);
-    }
-
     .pokemonImage {
       width: 20rem;
       border-radius: 100%;
       background: #ddd8;
       box-shadow: 1px 1px 2px 1px #0002;
       margin-top: 2.4rem;
-      position: relative;
-      /* overflow: hidden; */
     }
 
-    .pokemonImage img:nth-child(1) {
+    .pokemonImage img {
       filter: drop-shadow(1px 1px 1px #000b);
       width: 100%;
     }
@@ -102,18 +101,20 @@ export const Container = styled.main`
         border-radius: 8px;
       }
 
+      &::-webkit-progress-bar {
+        background: lightgray;
+        filter: drop-shadow(1px 1px 1px #000b);
+        border-radius: 8px;
+      }
+
       &::-moz-progress-value {
         background: ${({ theme }) => theme.colors.primary};
         border-radius: 8px;
       }
 
-      &::-webkit-progress-bar {
-        background: lightgray;
-        border-radius: 8px;
-      }
-
       &::-moz-progress-bar {
         background: lightgray;
+        filter: drop-shadow(1px 1px 1px #000b);
         border-radius: 8px;
       }
     }
