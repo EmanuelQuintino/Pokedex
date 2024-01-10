@@ -25,7 +25,7 @@ export function Header() {
   return (
     <Container>
       <Link to={"/?page=1"}>
-        <img src={pokemonLogo} alt="pokemon logo" />
+        <img src={pokemonLogo} alt="logo amarela escrita o texto pokémon" />
       </Link>
 
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -33,6 +33,7 @@ export function Header() {
           <label htmlFor="inputSearch" className="srOnly">
             Pesquisar Pokémon
           </label>
+
           <input
             type="text"
             id="inputSearch"
@@ -41,8 +42,10 @@ export function Header() {
               required: "Preencha o nome do pokémon",
             })}
           />
+
           <span className="inputError">{errors.inputSearch?.message}</span>
         </section>
+
         <button type="submit">Pesquisar</button>
       </form>
     </Container>

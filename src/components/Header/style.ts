@@ -2,10 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.header`
   background: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.light};
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-direction: column;
   padding: 2.4rem 3.2rem 3.2rem;
   box-shadow: 0px 0px 1px 1px #0004;
@@ -48,6 +46,7 @@ export const Container = styled.header`
 
   @media (min-width: 768px) {
     flex-direction: row;
+    justify-content: space-between;
     padding: 2.4rem 3.2rem;
 
     img {
