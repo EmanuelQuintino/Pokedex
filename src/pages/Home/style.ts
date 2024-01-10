@@ -57,6 +57,11 @@ export const Container = styled.main`
       font-size: 2.8rem;
     }
 
+    .loading {
+      position: static;
+      margin-top: 15rem;
+    }
+
     .gridCards {
       margin-top: 4.2rem;
       gap: 2.4rem;

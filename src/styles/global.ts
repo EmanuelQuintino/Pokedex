@@ -52,13 +52,13 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .loading {
-    width: 100%;
-    margin: 25% auto;
     font-weight: 700;
     font-size: 1.6rem;
     color: lightgray;
     display: grid;
     place-content: center;
+    position: absolute;
+    inset: 0;
   }
 
   @media (min-width: 768px) {

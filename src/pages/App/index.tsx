@@ -7,7 +7,11 @@ export function App() {
   return (
     <Container>
       <Header />
+
+      {/* main */}
       <Outlet />
+      {/* main */}
+
       <Footer />
     </Container>
   );
