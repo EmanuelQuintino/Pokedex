@@ -7,7 +7,7 @@ import { Pokemon } from "../@types/pokemon";
 export function useQueryPokemonPage() {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(30);
-  const [totalPages, setTotalPages] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
 
   const searchParams = useSearchParams();
   const navigate = useNavigate();
@@ -33,26 +33,43 @@ export function useQueryPokemonPage() {
   }
 
   function nextPage() {
-    setPage((prevPage) => prevPage + 1);
-    navigate(`?page=${page + 1}`);
+    if (page < totalPages) {
+      setPage((prevPage) => prevPage + 1);
+      navigate(`?page=${page + 1}`);
+    }
   }
 
   function prevPage() {
-    setPage((prevPage) => prevPage - 1);
-    navigate(`?page=${page - 1}`);
+    if (page > 1) {
+      setPage((prevPage) => prevPage - 1);
+      navigate(`?page=${page - 1}`);
+    }
   }
-
-  useEffect(() => {
-    const pageQuery = Number(searchParams[0].get("page"));
-    // if (pageQuery > totalPages) return setPage(totalPages);
-    if (pageQuery < 1) return setPage(1);
-    setPage(pageQuery || 1);
-  }, [searchParams, totalPages]);
 
   const query = useQuery({
     queryKey: ["getPokemonPage", page, limit],
     queryFn: () => getPokemonPage({ page, limit }),
   });
+
+  useEffect(() => {
+    if (totalPages > 0) {
+      const pageQuery = Number(searchParams[0].get("page"));
+
+      if (pageQuery > totalPages) {
+        navigate(`?page=${totalPages}`);
+        setPage(totalPages);
+        return;
+      }
+
+      if (pageQuery < 1) {
+        navigate(`?page=1`);
+        setPage(1);
+        return;
+      }
+
+      setPage(pageQuery || 1);
+    }
+  }, [searchParams, totalPages, navigate]);
 
   return {
     ...query,
