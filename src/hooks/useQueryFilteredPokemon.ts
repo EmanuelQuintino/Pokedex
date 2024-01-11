@@ -16,8 +16,8 @@ async function getFilteredPokemon(name: string) {
     return data;
   });
 
-  const pokemonLista = await Promise.all(pokemonPromiseList);
-  return pokemonLista as Pokemon[];
+  const pokemonList = await Promise.all(pokemonPromiseList);
+  return pokemonList as Pokemon[];
 }
 
 export function useQueryFilteredPokemon(name: string) {
