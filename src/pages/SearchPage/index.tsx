@@ -17,7 +17,7 @@ export function SearchPage() {
 
       {data && (
         <>
-          <h1>{`Encontrado ${data?.length} resultado(s) para "${queryPokemonName}"`}</h1>
+          <h1>{`Encontrado ${data.length} resultado(s) para "${queryPokemonName}"`}</h1>
 
           <div className="gridCards">
             {data.map((pokemon) => {

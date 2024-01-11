@@ -13,6 +13,7 @@ export function useQueryPokemonPage() {
   const navigate = useNavigate();
 
   async function getPokemonPage({ page = 1, limit = 30 }) {
+    if (page <= 0) page = 1;
     const offset = (page - 1) * limit;
     const { data } = await API.get(`/pokemon?limit=${limit}&offset=${offset}`);
 
@@ -52,9 +53,10 @@ export function useQueryPokemonPage() {
   });
 
   useEffect(() => {
-    if (totalPages > 0) {
-      const pageQuery = Number(searchParams[0].get("page"));
+    const pageQuery = Number(searchParams[0].get("page"));
+    setPage(pageQuery || 1);
 
+    if (totalPages > 0) {
       if (pageQuery > totalPages) {
         navigate(`?page=${totalPages}`);
         setPage(totalPages);
@@ -66,10 +68,8 @@ export function useQueryPokemonPage() {
         setPage(1);
         return;
       }
-
-      setPage(pageQuery || 1);
     }
-  }, [searchParams, totalPages, navigate]);
+  }, [page, totalPages, searchParams, navigate]);
 
   return {
     ...query,
