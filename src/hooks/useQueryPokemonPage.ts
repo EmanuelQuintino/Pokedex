@@ -6,7 +6,7 @@ import { Pokemon } from "../@types/pokemon";
 
 export function useQueryPokemonPage() {
   const [page, setPage] = useState(1);
-  const [limit, setLimite] = useState(30);
+  const [limit, setLimit] = useState(30);
   const [totalPages, setTotalPages] = useState(1);
 
   const searchParams = useSearchParams();
@@ -60,6 +60,6 @@ export function useQueryPokemonPage() {
     totalPages,
     nextPage,
     prevPage,
-    setLimite,
+    setLimit,
   };
 }

@@ -8,9 +8,8 @@ export function App() {
     <Container>
       <Header />
 
-      {/* main */}
+      {/* outlet is main */}
       <Outlet />
-      {/* main */}
 
       <Footer />
     </Container>
