@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { useQueryPokemon } from "../../hooks/useQueryPokemon";
+import { useQueryPokemonDetails } from "../../hooks/useQueryPokemonDetails";
 import { Container } from "./style";
 import { CardType } from "../../components/CardType";
 import pokeball from "../../assets/pokeball.png";
@@ -11,7 +11,7 @@ type Params = {
 
 export function Details() {
   const { name } = useParams<Params>();
-  const { data, isLoading, error } = useQueryPokemon(name!);
+  const { data, isLoading, error } = useQueryPokemonDetails(name!);
   const navigate = useNavigate();
 
   if (error) console.error(error);

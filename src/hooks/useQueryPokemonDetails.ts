@@ -7,7 +7,7 @@ async function getPokemon(name: string) {
   return data as Pokemon;
 }
 
-export function useQueryPokemon(name: string) {
+export function useQueryPokemonDetails(name: string) {
   const query = useQuery({
     queryKey: [`getPokemon${name}`, name],
     queryFn: () => getPokemon(name),
