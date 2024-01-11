@@ -11,12 +11,6 @@ export function PokemonCard({ pokemon }: Props) {
   return (
     <>
       <Container>
-        {/* <img
-          src={pokemon.sprites.other["official-artwork"].front_default || pokeball}
-          alt={pokemon.name}
-          className="backgroundImage"
-        /> */}
-
         <img
           src={pokemon.sprites.other["official-artwork"].front_default || pokeball}
           alt={pokemon.name}

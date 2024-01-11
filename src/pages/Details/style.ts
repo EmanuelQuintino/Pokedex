@@ -13,15 +13,6 @@ export const Container = styled.main`
     position: relative;
     overflow: hidden;
 
-    .backgroundImage {
-      position: absolute;
-      z-index: -1;
-      width: 200rem;
-      opacity: 0.5;
-      transform: rotate(-90deg);
-      filter: blur(300px) brightness(1.2);
-    }
-
     .buttonBackPage {
       font-size: 1.4rem;
       font-weight: 500;

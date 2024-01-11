@@ -20,14 +20,6 @@ export const Container = styled.div`
     scale: 1.05;
   }
 
-  .backgroundImage {
-    position: absolute;
-    z-index: -1;
-    width: 40rem;
-    opacity: 0.5;
-    filter: blur(100px) brightness(1.5);
-  }
-
   img {
     filter: drop-shadow(1px 1px 1px #000b);
     width: 8rem;
@@ -49,10 +41,6 @@ export const Container = styled.div`
     padding: 2.4rem;
     min-width: 22rem;
     min-height: 28rem;
-
-    .backgroundImage {
-      width: 100rem;
-    }
 
     img {
       width: 16rem;
