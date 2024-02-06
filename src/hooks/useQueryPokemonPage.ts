@@ -9,8 +9,8 @@ export function useQueryPokemonPage() {
   const [limit, setLimit] = useState(30);
   const [totalPages, setTotalPages] = useState(0);
 
-  const searchParams = useSearchParams();
   const navigate = useNavigate();
+  const searchParams = useSearchParams();
 
   async function getPokemonPage({ page = 1, limit = 30 }) {
     if (page <= 0) page = 1;
