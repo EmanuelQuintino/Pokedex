@@ -7,10 +7,11 @@ este projeto tem como objetivo criar uma Pokédex interativa que permite visuali
 
 ## Funcionalidades
 
+- Integração com PokeAPI
 - Listagem e paginação com todos os Pokémon
 - Página com informações detalhadas ao clicar no Pokémon
-- Campo de busca ao digitar nome.
-- Integração com PokeAPI
+- Campo de busca ao digitar nome
+- Deploy da Aplicação
 
 ## Tecnologias Utilizadas
 
