@@ -20,7 +20,7 @@ async function getFilteredPokemon(name: string) {
   return pokemonList as Pokemon[];
 }
 
-export function useQueryFilteredPokemon(name: string) {
+export function useQueryPokemonFiltered(name: string) {
   const query = useQuery({
     queryKey: [`getFilteredPokemon`, name],
     queryFn: () => getFilteredPokemon(name),

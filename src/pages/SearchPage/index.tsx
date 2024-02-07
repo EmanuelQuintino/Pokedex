@@ -1,12 +1,12 @@
 import { PokemonCard } from "../../components/PokemonCard";
 import { Link, useSearchParams } from "react-router-dom";
 import { Container } from "./style";
-import { useQueryFilteredPokemon } from "../../hooks/useQueryFilteredPokemon";
+import { useQueryPokemonFiltered } from "../../hooks/useQueryPokemonFiltered";
 
 export function SearchPage() {
   const searchParams = useSearchParams();
   const queryPokemonName = searchParams[0].get("q");
-  const { data, isLoading, error } = useQueryFilteredPokemon(queryPokemonName!);
+  const { data, isLoading, error } = useQueryPokemonFiltered(queryPokemonName!);
 
   if (error) console.error(error);
 
