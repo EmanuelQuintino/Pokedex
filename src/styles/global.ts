@@ -13,7 +13,8 @@ export const GlobalStyles = createGlobalStyle`
     
     font-size: 1.6rem;
     color: ${({ theme }) => theme.colors.dark};
-    border: none;
+    /* border: none; */
+    border: transparent;
     font-family: "Montserrat", "Roboto", sans-serif;
     
     font-synthesis: none;
