@@ -1,4 +1,4 @@
-# Pokedex
+# Pokédex
 
 Developed as part of the React module in the [Web Development Course](https://emanuelquintino.github.io/Page-WDC/), this project aims to create an interactive Pokédex that allows you to view all Pokémon, provide details about each one, implement pagination and include a search field to find specific Pokémon.
 
@@ -22,6 +22,7 @@ Developed as part of the React module in the [Web Development Course](https://em
 - `React Router DOM`
 - `React Hook Form`
 - `React Tanstack Query`
+- `Axios`
 
 ## Project Configuration
 
