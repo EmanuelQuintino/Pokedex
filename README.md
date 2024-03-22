@@ -1,59 +1,60 @@
-# Pokédex
+# Pokedex
 
-Desenvolvido como parte do módulo de React no curso de [Desenvolvimento Web](https://emanuelquintino.github.io/Page-WDC/),
-este projeto tem como objetivo criar uma Pokédex interativa que permite visualizar todos os Pokémon, fornecer detalhes sobre cada um deles, implementar paginação e incluir um campo de busca para encontrar Pokémon específico.
+Developed as part of the React module in the [Web Development Course](https://emanuelquintino.github.io/Page-WDC/), this project aims to create an interactive Pokédex that allows you to view all Pokémon, provide details about each one, implement pagination and include a search field to find specific Pokémon.
 
 ![home-layout](./src/assets/home-layout.png)
 
-## Funcionalidades
+## Features
 
-- Integração com PokeAPI
-- Listagem e paginação com todos os Pokémon
-- Página com informações detalhadas ao clicar no Pokémon
-- Campo de busca ao digitar nome
-- Deploy da Aplicação
+- Integration with PokeAPI
+- Listing and pagination with all Pokémon
+- Page with detailed information when clicking on the Pokémon
+- Search field when typing name
+- Application Deployment
+- Structured project, with good code organization
+- Presents a visually appealing layout
 
-## Tecnologias Utilizadas
+## Technologies
 
 - `React`
 - `TypeScript`
-- `Styled Components`
+- `Style Components`
 - `React Router DOM`
 - `React Hook Form`
 - `React Tanstack Query`
 
-## Configuração do Projeto
+## Project Configuration
 
 ```bash
-# Clone o repositório
+# clone the repository
 $ git clone https://github.com/EmanuelQuintino/Pokedex.git
 
-# Instale as dependências
+# install dependencies
 $ npm install
 
-# Execute o projeto
+# run the project
 $ npm run dev
 ```
 
-## Variável Ambiente
+## Environment Variables
 
 ```ini
 VITE_API="https://pokeapi.co/api/v2"
 ```
 
-## Contribuição
+## Contribution
 
-Para contribuir com melhorias, correções de bugs ou novas funcionalidades, basta seguir estas etapas:
+To contribute improvements, bug fixes or new features, simply follow these steps:
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua contribuição:
+1. Fork the project
+2. Create a branch for your contribution
+3. Make the desired changes
+4. Submit a pull request
 
 ```bash
-$ git checkout -b nome-sobrenome
+# create branch
+$ git checkout -b firstname-lastname
 ```
-
-3. Faça as alterações desejadas
-4. Envie um pull request
 
 ## Links
 
