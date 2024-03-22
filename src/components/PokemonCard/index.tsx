@@ -9,23 +9,21 @@ type Props = {
 
 export function PokemonCard({ pokemon }: Props) {
   return (
-    <>
-      <Container>
-        <img
-          src={pokemon.sprites.other["official-artwork"].front_default || pokeball}
-          alt={pokemon.name}
-        />
+    <Container>
+      <img
+        src={pokemon.sprites.other["official-artwork"].front_default || pokeball}
+        alt={pokemon.name}
+      />
 
-        <strong>
-          #{pokemon.id} {pokemon.name}
-        </strong>
+      <strong>
+        #{pokemon.id} {pokemon.name}
+      </strong>
 
-        <div className="boxTypes">
-          {pokemon.types.map((type) => {
-            return <CardType key={type.type.name} type={type.type.name} />;
-          })}
-        </div>
-      </Container>
-    </>
+      <div className="boxTypes">
+        {pokemon.types.map((type) => {
+          return <CardType key={type.type.name} type={type.type.name} />;
+        })}
+      </div>
+    </Container>
   );
 }

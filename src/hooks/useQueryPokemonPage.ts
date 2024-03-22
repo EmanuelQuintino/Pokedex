@@ -67,7 +67,7 @@ export function useQueryPokemonPage() {
   }, [page, totalPages, searchParams, navigate]);
 
   const query = useQuery({
-    queryKey: ["getPokemonPage", page, limit],
+    queryKey: [`getPokemonPage${page}-${limit}`, page, limit],
     queryFn: () => getPokemonPage({ page, limit }),
   });
 
