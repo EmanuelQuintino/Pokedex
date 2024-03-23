@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useQueryPokemonDetails } from "../../hooks/useQueryPokemonDetails";
 import { Container } from "./style";
-import { CardType } from "../../components/CardType";
+import { TypeCard } from "../../components/TypeCard";
 import pokeball from "../../assets/pokeball.png";
 import { useEffect } from "react";
 
@@ -50,7 +50,7 @@ export function Details() {
 
             <div className="boxTypes">
               {data.types.map((type) => {
-                return <CardType key={type.type.name} type={type.type.name} size={16} />;
+                return <TypeCard key={type.type.name} type={type.type.name} size={16} />;
               })}
             </div>
           </div>

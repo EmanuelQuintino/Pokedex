@@ -25,12 +25,15 @@ export function Header() {
   return (
     <Container>
       <Link to={"/?page=1"}>
-        <img src={pokemonLogo} alt="logo amarela escrita o texto pokémon" />
+        <img
+          src={pokemonLogo}
+          alt="logo amerela com borda azul escrita o texto pokémon"
+        />
       </Link>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <section>
-          <label htmlFor="inputSearch" className="srOnly">
+          <label htmlFor="inputSearch" hidden>
             Pesquisar Pokémon
           </label>
 

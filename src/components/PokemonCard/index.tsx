@@ -1,4 +1,4 @@
-import { CardType } from "../CardType";
+import { TypeCard } from "../TypeCard";
 import { Container } from "./style";
 import pokeball from "../../assets/pokeball.png";
 import { Pokemon } from "../../@types/pokemon";
@@ -21,7 +21,7 @@ export function PokemonCard({ pokemon }: Props) {
 
       <div className="boxTypes">
         {pokemon.types.map((type) => {
-          return <CardType key={type.type.name} type={type.type.name} />;
+          return <TypeCard key={type.type.name} type={type.type.name} />;
         })}
       </div>
     </Container>
