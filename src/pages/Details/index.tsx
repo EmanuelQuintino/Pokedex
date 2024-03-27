@@ -5,12 +5,8 @@ import { TypeCard } from "../../components/TypeCard";
 import pokeball from "../../assets/pokeball.png";
 import { useEffect } from "react";
 
-type Params = {
-  name: string;
-};
-
 export function Details() {
-  const { name } = useParams<Params>();
+  const { name } = useParams();
   const { data, isLoading, error } = useQueryPokemonDetails(name!);
   const navigate = useNavigate();
 
