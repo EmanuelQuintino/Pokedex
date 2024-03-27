@@ -27,7 +27,7 @@ export function Header() {
       <Link to={"/?page=1"}>
         <img
           src={pokemonLogo}
-          alt="logo amerela com borda azul escrita o texto pokémon"
+          alt="logo com texto escrito pokémon, cor amarela e borda azul"
         />
       </Link>
 
