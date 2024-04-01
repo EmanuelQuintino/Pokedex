@@ -13,7 +13,7 @@ export const Container = styled.main`
     position: relative;
     overflow: hidden;
 
-    .buttonBackPage {
+    .backPageButton {
       font-size: 1.4rem;
       font-weight: 500;
       position: absolute;
@@ -78,7 +78,7 @@ export const Container = styled.main`
       justify-content: space-between;
     }
 
-    .statsName {
+    .statName {
       font-size: 1.4rem;
       width: 11rem;
       margin-left: auto;
@@ -110,7 +110,7 @@ export const Container = styled.main`
       }
     }
 
-    .statsValue {
+    .statValue {
       font-size: 1.4rem;
       width: 2.8rem;
       text-align: right;
@@ -122,7 +122,7 @@ export const Container = styled.main`
       flex-direction: row;
       width: 120rem;
 
-      .buttonBackPage {
+      .backPageButton {
         font-size: 1.6rem;
         top: 22px;
         left: 28px;
@@ -164,7 +164,7 @@ export const Container = styled.main`
         margin-top: 0.2rem;
       }
 
-      .statsName {
+      .statName {
         font-size: 1.8rem;
         width: 14rem;
       }
@@ -173,7 +173,7 @@ export const Container = styled.main`
         height: 0.8rem;
       }
 
-      .statsValue {
+      .statValue {
         font-size: 1.8rem;
         width: 3.6rem;
       }

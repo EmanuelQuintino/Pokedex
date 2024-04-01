@@ -3,8 +3,8 @@ import { Container } from "./style";
 import { SubmitHandler, useForm } from "react-hook-form";
 import pokemonLogo from "../../assets/pokemon-logo.png";
 
-type Inputs = {
-  inputSearch: string;
+type Input = {
+  pokemonName: string;
 };
 
 export function Header() {
@@ -15,10 +15,10 @@ export function Header() {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<Input>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    navigate(`/search?q=${data.inputSearch}`);
+  const onSubmit: SubmitHandler<Input> = (data) => {
+    navigate(`/search?q=${data.pokemonName}`);
     reset();
   };
 
@@ -33,20 +33,20 @@ export function Header() {
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <section>
-          <label htmlFor="inputSearch" hidden>
+          <label htmlFor="pokemonName" hidden>
             Pesquisar Pokémon
           </label>
 
           <input
             type="text"
-            id="inputSearch"
+            id="pokemonName"
             placeholder="Pesquisar Pokémon"
-            {...register("inputSearch", {
-              required: "Preencha o nome do pokémon",
+            {...register("pokemonName", {
+              required: "Informe o nome do pokémon!",
             })}
           />
 
-          <span className="inputError">{errors.inputSearch?.message}</span>
+          <span className="inputError">{errors.pokemonName?.message}</span>
         </section>
 
         <button type="submit">Pesquisar</button>

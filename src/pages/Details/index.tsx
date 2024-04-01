@@ -23,7 +23,7 @@ export function Details() {
 
       {data && (
         <div className="boxDetails">
-          <button onClick={() => navigate(-1)} className="buttonBackPage">
+          <button onClick={() => navigate(-1)} className="backPageButton">
             &lt; voltar
           </button>
 
@@ -41,7 +41,7 @@ export function Details() {
 
             <div className="sizePokemon">
               <span>Height: {data.height}0cm</span>
-              <span>Weight: {data.weight}kg</span>
+              <span>Weight: {data.weight / 10}kg</span>
             </div>
 
             <div className="boxTypes">
@@ -52,12 +52,12 @@ export function Details() {
           </div>
 
           <div className="boxStats">
-            {data.stats?.map((status) => {
+            {data.stats?.map((stat) => {
               return (
-                <div key={status.stat.name} className="stats">
-                  <span className="statsName">{status.stat.name}</span>
-                  <progress max={200} value={status.base_stat} />
-                  <span className="statsValue">{status.base_stat}</span>
+                <div key={stat.stat.name} className="stats">
+                  <span className="statName">{stat.stat.name}</span>
+                  <progress max={200} value={stat.base_stat} />
+                  <span className="statValue">{stat.base_stat}</span>
                 </div>
               );
             })}
