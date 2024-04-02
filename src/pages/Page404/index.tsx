@@ -7,7 +7,7 @@ export function Page404() {
   return (
     <Container>
       <img src={page404} alt="page404" />
-      <button onClick={() => navigate("/", { replace: true })}>Voltar</button>
+      <button onClick={() => navigate("/")}>Voltar</button>
     </Container>
   );
 }
