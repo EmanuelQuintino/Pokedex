@@ -9,7 +9,7 @@ async function getPokemon(name: string) {
 
 export function useQueryPokemonDetails(name: string) {
   const query = useQuery({
-    queryKey: [`getPokemon${name}`],
+    queryKey: [`getPokemon`, name],
     queryFn: () => getPokemon(name),
   });
 
