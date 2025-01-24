@@ -6,7 +6,7 @@ export const Container = styled.header`
   align-items: center;
   flex-direction: column;
   padding: 2.4rem 3.2rem 3.2rem;
-  box-shadow: 0px 0px 1px 1px #0004;
+  box-shadow: 1px 1px 1px 1px #0004;
   width: 100%;
 
   img {

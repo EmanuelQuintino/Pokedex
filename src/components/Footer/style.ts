@@ -7,7 +7,7 @@ export const Container = styled.footer`
   text-align: center;
   font-weight: 700;
   text-shadow: 1px 1px 2px #0004;
-  box-shadow: 0px 0px 1px 1px #0004;
+  box-shadow: 1px 1px 1px 1px #0004;
 
   a {
     font-size: 1.2rem;
