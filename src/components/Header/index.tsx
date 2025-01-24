@@ -24,6 +24,8 @@ export function Header() {
 
   return (
     <Container>
+      <h1 className="srOnly">Pokédex - Reprograma Jucás</h1>
+
       <Link to={"/?page=1"}>
         <img
           src={pokemonLogo}
@@ -33,7 +35,7 @@ export function Header() {
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <section>
-          <label htmlFor="pokemonName" hidden>
+          <label htmlFor="pokemonName" className="srOnly">
             Pesquisar Pokémon
           </label>
 
