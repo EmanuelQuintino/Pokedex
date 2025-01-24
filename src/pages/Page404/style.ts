@@ -4,11 +4,11 @@ export const Container = styled.div`
   display: grid;
   place-content: center;
   height: 100vh;
+  background: ${({ theme }) => theme.colors.light300};
 
   img {
     margin-top: 2.4rem;
     width: 32rem;
-    box-shadow: 1px 1px 2px 1px #0002;
   }
 
   button {

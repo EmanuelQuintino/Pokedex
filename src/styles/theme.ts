@@ -1,6 +1,7 @@
 export const appTheme = {
   colors: {
     light: "#f2f2f2",
+    light300: "#f9f9f9",
     dark: "#262626",
     primary: "#037F8C",
     secondary: "#0477BF",
