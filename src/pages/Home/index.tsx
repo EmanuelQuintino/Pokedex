@@ -21,7 +21,7 @@ export function Home() {
 
   return (
     <Container>
-      <h1>{"Bem-vindo(a) à Pokédex do Reprograma Jucás"}</h1>
+      <h1>Bem-vindo(a) à Pokédex do Reprograma Jucás"</h1>
 
       {isLoading && <span className="loading">Loading...</span>}
       {!isLoading && error && <span className="loading">Error...</span>}

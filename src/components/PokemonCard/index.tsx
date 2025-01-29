@@ -20,8 +20,8 @@ export function PokemonCard({ pokemon }: Props) {
       </strong>
 
       <div className="boxTypes">
-        {pokemon.types.map((type) => {
-          return <TypeCard key={type.type.name} type={type.type.name} />;
+        {pokemon.types.map(({ type }) => {
+          return <TypeCard key={type.name} type={type.name} />;
         })}
       </div>
     </Container>
