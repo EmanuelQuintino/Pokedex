@@ -19,8 +19,7 @@ export function useQueryPokemonPage() {
 
     const pokemonPromise = data.results.map(async (pokemon: { url: string }) => {
       const response = await fetch(pokemon.url);
-      const data = await response.json();
-      return data;
+      return response.json();
     });
 
     const pokemonData = await Promise.all(pokemonPromise);

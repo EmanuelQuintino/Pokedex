@@ -4,14 +4,14 @@ import pokeball from "../../assets/pokeball.png";
 import { Pokemon } from "../../@types/pokemon";
 
 type Props = {
-  pokemon: Pokemon;
+  pokemon: Partial<Pokemon>;
 };
 
 export function PokemonCard({ pokemon }: Props) {
   return (
     <Container>
       <img
-        src={pokemon.sprites.other["official-artwork"].front_default || pokeball}
+        src={pokemon.sprites?.other["official-artwork"].front_default || pokeball}
         alt={pokemon.name}
       />
 
@@ -20,7 +20,7 @@ export function PokemonCard({ pokemon }: Props) {
       </strong>
 
       <div className="boxTypes">
-        {pokemon.types.map(({ type }) => {
+        {pokemon.types?.map(({ type }) => {
           return <TypeCard key={type.name} type={type.name} />;
         })}
       </div>
