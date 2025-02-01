@@ -34,14 +34,13 @@ export function useQueryPokemonPage() {
 
   function nextPage() {
     if (page < totalPages) {
-      setPage((prevPage) => prevPage + 1);
       navigate(`?page=${page + 1}`);
     }
   }
 
   function prevPage() {
     if (page > 1) {
-      setPage((prevPage) => prevPage - 1);
+      // setPage((prevPage) => prevPage - 1);
       navigate(`?page=${page - 1}`);
     }
   }
@@ -53,17 +52,15 @@ export function useQueryPokemonPage() {
     if (totalPages > 0) {
       if (pageQuery > totalPages) {
         navigate(`?page=${totalPages}`);
-        setPage(totalPages);
         return;
       }
 
       if (pageQuery < 1) {
         navigate(`?page=1`);
-        setPage(1);
         return;
       }
     }
-  }, [page, totalPages, searchParams, navigate]);
+  }, [totalPages, searchParams, navigate]);
 
   const query = useQuery({
     queryKey: [`getPokemonPage`, page, limit],

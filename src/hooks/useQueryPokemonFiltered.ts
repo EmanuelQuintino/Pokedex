@@ -12,8 +12,7 @@ async function getFilteredPokemon(name: string) {
 
   const pokemonPromiseList = filteredPokemon.map(async (pokemon: { url: string }) => {
     const response = await fetch(pokemon.url);
-    const data = await response.json();
-    return data;
+    return response.json();
   });
 
   const pokemonList = await Promise.all(pokemonPromiseList);

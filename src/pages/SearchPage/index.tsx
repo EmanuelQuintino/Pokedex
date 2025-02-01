@@ -6,6 +6,7 @@ import { useQueryPokemonFiltered } from "../../hooks/useQueryPokemonFiltered";
 export function SearchPage() {
   const searchParams = useSearchParams();
   const queryPokemonName = searchParams[0].get("q");
+
   const { data, isLoading, error } = useQueryPokemonFiltered(queryPokemonName!);
 
   if (error) console.error(error);

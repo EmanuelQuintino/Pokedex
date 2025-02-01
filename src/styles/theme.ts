@@ -27,7 +27,7 @@ export const appTheme = {
       electric: "#bba909",
       fairy: "#fdb9e9",
       shadow: "#7b62a3",
-      unknow: "#757575",
+      unknown: "#757575",
     },
     size: {
       vs: 0.8,
