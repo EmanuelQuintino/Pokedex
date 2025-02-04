@@ -45,5 +45,5 @@ VITE_API="https://pokeapi.co/api/v2"
 
 ## Links
 
-- [Deploy](pokedex-wdc-seven.vercel.app)
+- [Deploy](https://pokedex-wdc-seven.vercel.app)
 - [PokeAPI](https://pokeapi.co/)
